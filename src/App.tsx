@@ -1,13 +1,20 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import HomeContainer from "./containers/HomeContainer";
+import ThemeProvider, { useTheme } from "./context/ThemeProvider";
 
 function App() {
+  const { theme } = useTheme();
   return (
-    <div className="App">
-      <Helmet>
-        <html data-theme="aqua" />
-      </Helmet>
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <HomeContainer />
+        {theme}
+        <Helmet>
+          <html data-theme={theme} />
+        </Helmet>
+      </div>
+    </ThemeProvider>
   );
 }
 

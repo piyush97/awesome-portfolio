@@ -1,21 +1,26 @@
-import React, { createContext, useContext } from "react";
+// TODO
+import React, { createContext, useContext, useState } from "react";
 
 type ThemeContextProps = {
   theme: string;
-};
+  updateTheme: () => void;
+} | null;
 
 type ThemeProviderProps = {
   children: JSX.Element[] | JSX.Element;
 };
-
-const ThemeContext = createContext<ThemeContextProps>({ theme: "light" });
-
+const ThemeContext = createContext<ThemeContextProps>(null);
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const value = {
-    theme: "light",
+  const [theme, setTheme] = useState("light");
+
+  const updateTheme = () => {
+    setTheme("dark");
   };
+
   return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme, updateTheme }}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
 

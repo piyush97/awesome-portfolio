@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import Drawer from "../components/Drawer";
+import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 
 const HomeContainer: React.FC = () => {
+  const [menuShow, showMenu] = useState(false);
+
   return (
-    <div className="container mx-auto">
-      <Navbar />
-    </div>
+    <>
+      <Navbar menuShow={menuShow} showMenu={showMenu} />
+      {menuShow && <Drawer />}
+      <Hero />
+    </>
   );
 };
 

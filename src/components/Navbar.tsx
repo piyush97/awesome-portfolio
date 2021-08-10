@@ -15,7 +15,7 @@ type NavbarProps = {
 };
 
 const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
   return (
     <div className="shadow-lg navbar bg-neutral text-neutral-content">
       <div className="flex-none px-2 mx-2">

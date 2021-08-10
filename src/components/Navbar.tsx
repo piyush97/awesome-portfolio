@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import {
   ChevronDownIcon,
   ColorSwatchIcon,
@@ -48,18 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
             <XIcon className="w-5 h-5 lg:hidden" />
           )}
         </button>
-        {/* <button
-          className="btn btn-square btn-ghost"
-          onClick={() => {
-            theme === "light" ? setTheme("dark") : setTheme("light");
-          }}
-        >
-          {theme === "light" ? (
-            <MoonIcon className="w-5 h-5 " />
-          ) : (
-            <SunIcon className="w-5 h-5 " />
-          )}
-        </button> */}
+
         <div className="dropdown dropdown-end">
           <div tabIndex={0} className="btn btn-ghost rounded-btn">
             <ColorSwatchIcon className="w-5 h-5 mr-2" /> Change Theme{" "}

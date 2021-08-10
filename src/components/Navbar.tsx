@@ -18,7 +18,7 @@ type NavbarProps = {
 const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
   const { setTheme } = useTheme();
   return (
-    <div className="shadow-lg navbar bg-neutral text-neutral-content">
+    <div className="inset-x-0 top-0 transition duration-300 shadow-lg  navbar bg-neutral lg:fixed text-neutral-content">
       <div className="flex-none px-2 mx-2">
         <span className="text-lg font-bold">{NAME}</span>
       </div>
@@ -59,13 +59,13 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
             tabIndex={0}
             className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
           >
-            <li className="menu-title antialiased">
+            <li className="antialiased menu-title">
               <span>Themes</span>
             </li>
             {ThemeList.map(({ key, name, title, icon }) => (
               <li
                 key={key}
-                className="text-sm antialiased font-medium text-base-content block"
+                className="block text-sm antialiased font-medium text-base-content"
               >
                 <a onClick={() => setTheme(name)}>
                   <span>

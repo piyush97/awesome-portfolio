@@ -59,10 +59,13 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
             tabIndex={0}
             className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
           >
+            <li className="menu-title antialiased">
+              <span>Themes</span>
+            </li>
             {ThemeList.map(({ key, name, title, icon }) => (
               <li
                 key={key}
-                className="text-sm antialiased font-medium text-base-content "
+                className="text-sm antialiased font-medium text-base-content block"
               >
                 <a onClick={() => setTheme(name)}>
                   <span>

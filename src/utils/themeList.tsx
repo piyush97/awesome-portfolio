@@ -10,4 +10,5 @@ export const ThemeList: {
   { key: 4, title: "Bumblebee", name: "bumblebee", icon: "🐝" },
   { key: 5, title: "Emerald", name: "emerald", icon: "✳️" },
   { key: 6, title: "Corporate", name: "corporate", icon: "🏢" },
+  { key: 7, title: "Black", name: "black", icon: "🏴" },
 ];

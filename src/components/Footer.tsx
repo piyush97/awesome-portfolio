@@ -7,9 +7,6 @@ const Footer: React.FC = () => {
     <>
       <div className="pb-2 antialiased text-center bg-base-300">
         <div className="container flex flex-col items-center justify-center pt-20 mx-auto lg:pt-72">
-          <div>
-            <img src="test" alt="logo" />
-          </div>
           <div className="flex flex-col pt-3 text-base-content md:items-center f-f-l">
             <h1 className="text-3xl font-black ">Piyush Mehta</h1>
 

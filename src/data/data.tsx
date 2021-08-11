@@ -14,7 +14,7 @@ export const GREETING_TEXT = "Hello, There";
 export const GREETING_DESCRIPTION =
   "Busy Developing a side project which will eventually be never done ";
 
-export const EXPERIENCE: {
+export type TimelineProps = {
   key: number;
   company: string;
   position: string;
@@ -22,7 +22,8 @@ export const EXPERIENCE: {
   start: string;
   end: string;
   description: string;
-}[] = [
+};
+export const EXPERIENCE: TimelineProps[] = [
   {
     key: 1,
     company: "Google",
@@ -36,7 +37,7 @@ export const EXPERIENCE: {
     key: 2,
     company: "Facebook",
     position: "Software Engineer",
-    logo: "https://s-media-cache-ak0.pinimg.com/originals/a4/a5/c5/a4a5c5b8a8e9f8a7a8a8a8a8a8a8a8a.jpg",
+    logo: "https://logos-world.net/wp-content/uploads/2020/04/Facebook-Logo.png",
     start: "2015-01-01",
     end: "2016-01-01",
     description: "I worked on the frontend of Facebook.",
@@ -45,7 +46,7 @@ export const EXPERIENCE: {
     key: 3,
     company: "Microsoft",
     position: "Software Engineer",
-    logo: "https://www.microsoft.com/en-us/media/images/logos/microsoft_logo.png",
+    logo: "https://www.backbase.com/wp-content/uploads/2020/05/Microsoft-Logo-PNG-Transparent.png",
     start: "2015-01-01",
     end: "2016-01-01",
     description: "I worked on the frontend of Microsoft's new search engine.",

@@ -11,7 +11,7 @@ const HomeContainer: React.FC = () => {
   return (
     <>
       <Navbar menuShow={menuShow} showMenu={showMenu} />
-      {menuShow && <Drawer />}
+      {menuShow && <Drawer menuShow />}
       <Hero />
       <ExperienceContainer />
       <Footer />

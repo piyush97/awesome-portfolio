@@ -13,3 +13,42 @@ export const MENU: {
 export const GREETING_TEXT = "Hello, There";
 export const GREETING_DESCRIPTION =
   "Busy Developing a side project which will eventually be never done ";
+
+export type TimelineProps = {
+  key: number;
+  company: string;
+  position: string;
+  logo: string;
+  start: string;
+  end: string;
+  description: string;
+};
+export const EXPERIENCE: TimelineProps[] = [
+  {
+    key: 1,
+    company: "Google",
+    position: "Software Engineer",
+    logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+    start: "2015-01-01",
+    end: "2016-01-01",
+    description: "I worked on the frontend of Google's new search engine.",
+  },
+  {
+    key: 2,
+    company: "Facebook",
+    position: "Software Engineer",
+    logo: "https://logos-world.net/wp-content/uploads/2020/04/Facebook-Logo.png",
+    start: "2015-01-01",
+    end: "2016-01-01",
+    description: "I worked on the frontend of Facebook.",
+  },
+  {
+    key: 3,
+    company: "Microsoft",
+    position: "Software Engineer",
+    logo: "https://www.backbase.com/wp-content/uploads/2020/05/Microsoft-Logo-PNG-Transparent.png",
+    start: "2015-01-01",
+    end: "2016-01-01",
+    description: "I worked on the frontend of Microsoft's new search engine.",
+  },
+];

@@ -18,7 +18,7 @@ type NavbarProps = {
 const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
   const { setTheme } = useTheme();
   return (
-    <div className="inset-x-0 top-0 z-50 transition duration-300 shadow-lg navbar bg-neutral lg:fixed text-neutral-content">
+    <div className="inset-x-0 top-0 z-50 antialiased transition duration-300 shadow-lg navbar bg-neutral lg:fixed text-neutral-content">
       <div className="flex-none px-2 mx-2">
         <span className="text-lg font-bold">{NAME}</span>
       </div>

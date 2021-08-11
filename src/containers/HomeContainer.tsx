@@ -3,6 +3,7 @@ import Drawer from "../components/Drawer";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
+import ExperienceContainer from "./ExperienceContainer";
 
 const HomeContainer: React.FC = () => {
   const [menuShow, showMenu] = useState(false);
@@ -12,6 +13,7 @@ const HomeContainer: React.FC = () => {
       <Navbar menuShow={menuShow} showMenu={showMenu} />
       {menuShow && <Drawer />}
       <Hero />
+      <ExperienceContainer />
       <Footer />
     </>
   );

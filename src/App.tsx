@@ -12,7 +12,6 @@ function App() {
       <Helmet>
         <html data-theme={Theme} />
       </Helmet>
-      {Theme}
     </ThemeContext.Provider>
   );
 }

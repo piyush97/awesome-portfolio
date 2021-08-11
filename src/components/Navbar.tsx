@@ -18,7 +18,7 @@ type NavbarProps = {
 const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
   const { setTheme } = useTheme();
   return (
-    <div className="inset-x-0 top-0 transition duration-300 shadow-lg  navbar bg-neutral lg:fixed text-neutral-content">
+    <div className="inset-x-0 top-0 z-50 transition duration-300 shadow-lg navbar bg-neutral lg:fixed text-neutral-content">
       <div className="flex-none px-2 mx-2">
         <span className="text-lg font-bold">{NAME}</span>
       </div>
@@ -44,16 +44,19 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
           }}
         >
           {!menuShow ? (
-            <MenuIcon className="w-5 h-5 lg:hidden" />
+            <MenuIcon className="w-5 h-5 transition duration-300 lg:hidden" />
           ) : (
-            <XIcon className="w-5 h-5 lg:hidden" />
+            <XIcon className="w-5 h-5 transition duration-300 lg:hidden" />
           )}
         </button>
 
-        <div className="dropdown dropdown-end">
-          <div tabIndex={0} className="btn btn-ghost rounded-btn">
-            <ColorSwatchIcon className="w-5 h-5 mr-2" /> Change Theme{" "}
-            <ChevronDownIcon className="w-5 h-5 " />
+        <div className="dropdown dropdown-end lg:flex">
+          <div tabIndex={0} className="btn btn-ghost rounded-btn ">
+            <ColorSwatchIcon className="w-5 h-5 mr-2" />{" "}
+            <span className="hidden 2xl:flex xl:flex lg:flex">
+              Change Theme{" "}
+            </span>
+            <ChevronDownIcon className="hidden w-5 h-5 2xl:flex xl:flex lg:flex" />
           </div>
           <ul
             tabIndex={0}

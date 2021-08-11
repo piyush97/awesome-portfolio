@@ -23,6 +23,19 @@ export type TimelineProps = {
   end: string;
   description: string;
 };
+type ImageType = {
+  src: string;
+  width: string;
+  height: string;
+};
+export type SEOProps = {
+  lang: string;
+  title: string;
+  metaDescription: string;
+  keywords: string[];
+  author: string;
+  image: ImageType;
+};
 export const EXPERIENCE: TimelineProps[] = [
   {
     key: 1,
@@ -52,3 +65,14 @@ export const EXPERIENCE: TimelineProps[] = [
     description: "I worked on the frontend of Microsoft's new search engine.",
   },
 ];
+export const KEYWORDS = [
+  "Developer",
+  "front end developer based in India",
+  "piyush mehta",
+  "Awesome Portfolio",
+];
+export const IMAGE: ImageType = {
+  src: "https://picsum.photos/600/314",
+  height: "600",
+  width: "314",
+};

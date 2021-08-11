@@ -59,7 +59,6 @@ const Seo: React.FC<SEOProps> = ({
         },
       ]}
       title={title}
-      titleTemplate={`%s | ${title}`}
     />
   );
 };

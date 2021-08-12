@@ -11,9 +11,9 @@ export const SECTIONS = ["Home", "Experience", "Projects"];
 export const HERO_IMAGE = "https://picsum.photos/id/1005/1600/1400";
 export const CTA_TEXT = "Know More";
 export const MENU: MenuProps[] = [
-  { key: 1, route: "/", name: SECTIONS[0] },
-  { key: 2, route: "#experience", name: SECTIONS[1] },
-  { key: 3, route: "#projects", name: SECTIONS[2] },
+  { key: 1, route: "home", name: SECTIONS[0] },
+  { key: 2, route: "experience", name: SECTIONS[1] },
+  { key: 3, route: "projects", name: SECTIONS[2] },
 ];
 
 export const GREETING_TEXT = "Hello, There";
@@ -65,11 +65,12 @@ export const projects: ProjectCardProps[] = [
   {
     id: 1,
     projectName: "Awesome Portfolio",
-    projectDescription: "A portfolio of my work",
+    projectDescription:
+      "A portfolio of my work, where all the projects I've made are listed. The wesbite is made using latest technologies",
     projectImageLogo: "https://picsum.photos/600/314",
     link: "https://piyushmehta.com",
     buttonText: "View Project",
-    tech: ["hello", "world"],
+    tech: ["React", "TailwindCSS", "CSS", "Javascript"],
   },
   {
     id: 2,

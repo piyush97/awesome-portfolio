@@ -14,6 +14,7 @@ const Hero: React.FC<HeroProps> = ({
       style={{
         backgroundImage: `url(${image})`,
       }}
+      id="home"
     >
       <div className="hero-overlay bg-opacity-60" />
       <div className="text-center hero-content text-neutral-content">

@@ -15,6 +15,7 @@ import {
 } from "../data/data";
 import ExperienceContainer from "./ExperienceContainer";
 import ProjectsContainer from "./ProjectsContainer";
+import SkillsContainer from "./SkillsContainer";
 
 const HomeContainer: React.FC = () => {
   const [menuShow, showMenu] = useState(false);
@@ -40,6 +41,8 @@ const HomeContainer: React.FC = () => {
       <ExperienceContainer />
       <div className="px-12 divider" />
       <ProjectsContainer />
+      <div className="px-12 divider" />
+      <SkillsContainer />
       <Footer />
     </>
   );

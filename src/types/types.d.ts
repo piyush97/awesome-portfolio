@@ -58,3 +58,9 @@ export type ProjectCardProps = {
   link: string;
   buttonText: string;
 };
+
+export type SkillsProps = {
+  id: number;
+  skill: string;
+  level: number;
+};

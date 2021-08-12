@@ -2,18 +2,20 @@ import {
   ImageType,
   MenuProps,
   ProjectCardProps,
+  SkillsProps,
   TimelineProps,
 } from "../types/types";
 
 export const NAME = "Piyush Mehta";
 
-export const SECTIONS = ["Home", "Experience", "Projects"];
+export const SECTIONS = ["Home", "Experience", "Projects", "Skills"];
 export const HERO_IMAGE = "https://picsum.photos/id/1005/1600/1400";
 export const CTA_TEXT = "Know More";
 export const MENU: MenuProps[] = [
   { key: 1, route: "home", name: SECTIONS[0] },
   { key: 2, route: "experience", name: SECTIONS[1] },
   { key: 3, route: "projects", name: SECTIONS[2] },
+  { key: 4, route: "skills", name: SECTIONS[3] },
 ];
 
 export const GREETING_TEXT = "Hello, There";
@@ -89,5 +91,37 @@ export const projects: ProjectCardProps[] = [
     link: "https://piyushmehta.com",
     buttonText: "View Project",
     tech: ["hello", "world"],
+  },
+];
+/**
+ *  @type {SkillsProps}
+ * skills
+ * Kept level as random but you can hard code it if you want
+ */
+export const skills: SkillsProps[] = [
+  {
+    id: 1,
+    skill: "Javascript",
+    level: Math.floor(Math.random() * 100) + 1,
+  },
+  {
+    id: 2,
+    skill: "React",
+    level: Math.floor(Math.random() * 100) + 1,
+  },
+  {
+    id: 3,
+    skill: "CSS",
+    level: Math.floor(Math.random() * 100) + 1,
+  },
+  {
+    id: 4,
+    skill: "HTML",
+    level: Math.floor(Math.random() * 100) + 1,
+  },
+  {
+    id: 5,
+    skill: "Java",
+    level: Math.floor(Math.random() * 100) + 1,
   },
 ];

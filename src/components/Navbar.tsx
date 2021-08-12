@@ -5,8 +5,8 @@ import {
   MenuIcon,
   XIcon,
 } from "@heroicons/react/solid";
-import { motion } from "framer-motion";
 import React from "react";
+import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeProvider";
 import { MENU, NAME } from "../data/data";
 import { NavbarProps } from "../types/types";
@@ -22,15 +22,19 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
       <div className="flex-1 px-2 mx-2">
         <div className="items-stretch hidden lg:flex">
           {MENU.map(({ key, name, route }) => (
-            <motion.a
-              href={route}
-              className="btn btn-ghost btn-sm rounded-btn"
+            <Link
               key={key}
-              animate={{ scale: [0, 1] }}
-              transition={{ duration: 0.4 + key * 0.1 }}
+              activeClass="btn btn-ghost btn-sm rounded-btn cursor-pointer active font-extrabold text-secondary-focus transition"
+              to={route}
+              spy={true}
+              smooth={true}
+              duration={300}
+              className={
+                "btn-primary btn-ghost btn-sm rounded-btn  cursor-pointer"
+              }
             >
               {name}
-            </motion.a>
+            </Link>
           ))}
         </div>
       </div>

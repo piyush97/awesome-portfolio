@@ -13,13 +13,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <motion.div
-      // animate={num % 2 === 0 ? { x: [100 + num, 0] } : { x: [100 + num, 0] }}
       transition={{ duration: 0.25 }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       key={id}
     >
-      <div className="mx-6 card glass text-neutral-content text-base-content">
+      <div className="mx-6 card glass text-base-content">
         <figure className="p-6">
           <img
             src={projectImageLogo}
@@ -37,7 +36,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
           <div className="card-actions">
             <a href={link}>
-              <button className="rounded-full btn glass">{buttonText}</button>
+              <button className="rounded-full btn glass text-base-content">
+                {buttonText}
+              </button>
             </a>
           </div>
         </div>

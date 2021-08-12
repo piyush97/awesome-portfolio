@@ -1,41 +1,25 @@
+import {
+  ImageType,
+  MenuProps,
+  ProjectCardProps,
+  TimelineProps,
+} from "../types/types";
+
 export const NAME = "Piyush Mehta";
 
-export const MENU: {
-  key: number;
-  route: string;
-  name: string;
-}[] = [
-  { key: 1, route: "/", name: "Home" },
-  { key: 2, route: "#experience", name: "Experience" },
-  { key: 3, route: "#projects", name: "Projects" },
+export const SECTIONS = ["Home", "Experience", "Projects"];
+export const HERO_IMAGE = "https://picsum.photos/id/1005/1600/1400";
+export const CTA_TEXT = "Know More";
+export const MENU: MenuProps[] = [
+  { key: 1, route: "/", name: SECTIONS[0] },
+  { key: 2, route: "#experience", name: SECTIONS[1] },
+  { key: 3, route: "#projects", name: SECTIONS[2] },
 ];
 
 export const GREETING_TEXT = "Hello, There";
 export const GREETING_DESCRIPTION =
   "Busy Developing a side project which will eventually be never done ";
 
-export type TimelineProps = {
-  key: number;
-  company: string;
-  position: string;
-  logo: string;
-  start: string;
-  end: string;
-  description: string;
-};
-type ImageType = {
-  src: string;
-  width: string;
-  height: string;
-};
-export type SEOProps = {
-  lang: string;
-  title: string;
-  metaDescription: string;
-  keywords: string[];
-  author: string;
-  image: ImageType;
-};
 export const EXPERIENCE: TimelineProps[] = [
   {
     key: 1,
@@ -76,3 +60,33 @@ export const IMAGE: ImageType = {
   height: "600",
   width: "314",
 };
+
+export const projects: ProjectCardProps[] = [
+  {
+    id: 1,
+    projectName: "Awesome Portfolio",
+    projectDescription: "A portfolio of my work",
+    projectImageLogo: "https://picsum.photos/600/314",
+    link: "https://piyushmehta.com",
+    buttonText: "View Project",
+    tech: ["hello", "world"],
+  },
+  {
+    id: 2,
+    projectName: "Awesome Portfolio",
+    projectDescription: "A portfolio of my work",
+    projectImageLogo: "https://picsum.photos/600/314",
+    link: "https://piyushmehta.com",
+    buttonText: "View Project",
+    tech: ["hello", "world"],
+  },
+  {
+    id: 3,
+    projectName: "Awesome Portfolio",
+    projectDescription: "A portfolio of my work",
+    projectImageLogo: "https://picsum.photos/600/314",
+    link: "https://piyushmehta.com",
+    buttonText: "View Project",
+    tech: ["hello", "world"],
+  },
+];

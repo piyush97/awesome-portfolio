@@ -9,12 +9,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import { useTheme } from "../context/ThemeProvider";
 import { MENU, NAME } from "../data/data";
+import { NavbarProps } from "../types/types";
 import { ThemeList } from "../utils/themeList";
-
-type NavbarProps = {
-  menuShow: unknown;
-  showMenu: (e: boolean) => void;
-};
 
 const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
   const { setTheme } = useTheme();

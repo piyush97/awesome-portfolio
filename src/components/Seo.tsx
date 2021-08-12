@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { SEOProps } from "../data/data";
+import { SEOProps } from "../types/types";
 
 const Seo: React.FC<SEOProps> = ({
   lang,

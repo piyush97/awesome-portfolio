@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { TimelineProps } from "../data/data";
-
-type TimelineCardProps = { styling: string; num: number } & TimelineProps;
+import { TimelineCardProps } from "../types/types";
 
 const TimelineCard: React.FC<TimelineCardProps> = ({
   key,

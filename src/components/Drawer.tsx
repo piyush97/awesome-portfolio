@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { MENU } from "../data/data";
+import { DrawerProps } from "../types/types";
 
-type DrawerProps = {
-  menuShow: boolean;
-};
 const Drawer: React.FC<DrawerProps> = ({ menuShow }) => {
   const variants = {
     open: { opacity: 1, x: 0, scale: [0, 1] },

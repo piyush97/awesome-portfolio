@@ -4,8 +4,17 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Seo from "../components/Seo";
-import { GREETING_DESCRIPTION, IMAGE, KEYWORDS, NAME } from "../data/data";
+import {
+  CTA_TEXT,
+  GREETING_DESCRIPTION,
+  GREETING_TEXT,
+  HERO_IMAGE,
+  IMAGE,
+  KEYWORDS,
+  NAME,
+} from "../data/data";
 import ExperienceContainer from "./ExperienceContainer";
+import ProjectsContainer from "./ProjectsContainer";
 
 const HomeContainer: React.FC = () => {
   const [menuShow, showMenu] = useState(false);
@@ -22,8 +31,15 @@ const HomeContainer: React.FC = () => {
       />
       <Navbar menuShow={menuShow} showMenu={showMenu} />
       {menuShow && <Drawer menuShow />}
-      <Hero />
+      <Hero
+        image={HERO_IMAGE}
+        greetingText={GREETING_TEXT}
+        greetingDescription={GREETING_DESCRIPTION}
+        buttonText={CTA_TEXT}
+      />
       <ExperienceContainer />
+      <div className="px-12 divider" />
+      <ProjectsContainer />
       <Footer />
     </>
   );

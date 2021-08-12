@@ -1,13 +1,18 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { GREETING_DESCRIPTION, GREETING_TEXT } from "../data/data";
+import { HeroProps } from "../types/types";
 
-const Hero: React.FC = () => {
+const Hero: React.FC<HeroProps> = ({
+  image,
+  greetingText,
+  greetingDescription,
+  buttonText,
+}) => {
   return (
     <div
       className="min-h-screen pt-0 mt-0 antialiased hero bg-gradient-to-br from-primary to-secondary text-primary-content"
       style={{
-        backgroundImage: "url(https://picsum.photos/id/1005/1600/1400)",
+        backgroundImage: `url(${image})`,
       }}
     >
       <div className="hero-overlay bg-opacity-60" />
@@ -17,9 +22,9 @@ const Hero: React.FC = () => {
             animate={{ scale: [0.5, 1] }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="mb-5 text-5xl font-bold ">{GREETING_TEXT}</h1>
-            <p className="mb-5">{GREETING_DESCRIPTION}</p>
-            <button className="transition btn btn-primary">Know More</button>
+            <h1 className="mb-5 text-5xl font-bold ">{greetingText}</h1>
+            <p className="mb-5">{greetingDescription}</p>
+            <button className="transition btn btn-primary">{buttonText}</button>
           </motion.div>
         </div>
       </div>

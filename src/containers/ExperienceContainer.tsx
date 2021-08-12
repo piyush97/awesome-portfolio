@@ -1,13 +1,12 @@
 import React from "react";
+import Heading from "../components/Heading";
 import TimelineCard from "../components/TimelineCard";
-import { EXPERIENCE } from "../data/data";
+import { EXPERIENCE, SECTIONS } from "../data/data";
 
 const ExperienceContainer: React.FC = () => {
   return (
     <>
-      <div className="flex items-center justify-center pt-2 antialiased ">
-        <div className="text-3xl">Experience</div>
-      </div>
+      <Heading heading={SECTIONS[1]} />
       <div className="relative h-full p-10 overflow-hidden wrap">
         <div className="absolute h-full border border-accent border-2-2 border-opacity-20 left-1/2 "></div>
         {EXPERIENCE.map(

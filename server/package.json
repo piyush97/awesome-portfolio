@@ -1,0 +1,10 @@
+{
+  "name": "awesome-portfolio-server",
+  "version": "1.0.0",
+  "description": "Server for awesome Portfolio",
+  "main": "index.js",
+  "repository": "https://github.com/piyush97/awesome-portfolio",
+  "author": "piyush mehta",
+  "license": "MIT",
+  "private": false
+}

@@ -4,7 +4,7 @@ import HomeContainer from "./containers/HomeContainer";
 import { ThemeContext, ThemeContextProps } from "./context/ThemeProvider";
 
 function App() {
-  const [Theme, setTheme] = useState("cupcake");
+  const [Theme, setTheme] = useState("light");
   const value: ThemeContextProps = { theme: Theme, setTheme };
   return (
     <ThemeContext.Provider value={value}>

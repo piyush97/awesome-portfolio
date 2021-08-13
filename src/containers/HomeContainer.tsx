@@ -20,7 +20,7 @@ const HomeContainer: React.FC = () => {
   const [menuShow, showMenu] = useState(false);
 
   return (
-    <>
+    <div className="antialiased bg-primary-content text-primary">
       <Seo
         lang="en"
         metaDescription={GREETING_DESCRIPTION}
@@ -41,7 +41,7 @@ const HomeContainer: React.FC = () => {
       <div className="px-12 divider" />
       <ProjectsContainer />
       <Footer />
-    </>
+    </div>
   );
 };
 

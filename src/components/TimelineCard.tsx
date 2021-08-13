@@ -26,14 +26,18 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
         transition={{ duration: 0.25 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="order-1 w-5/12 card glass lg:card-side "
+        className={
+          num % 2 === 0
+            ? "order-1 w-5/12 shadow-2xl card lg:card-side bg-primary text-primary-content"
+            : "order-1 w-5/12 shadow-2xl card lg:card-side bg-secondary text-secondary-content"
+        }
       >
         <div className="card-body">
           <img src={logo} alt={company} className="w-20" />
-          <span className="py-0 font-thin card-subtitle font-xs card-side">
+          <span className="py-0 font-bold card-subtitle font-xs card-side">
             {position}
           </span>
-          <span className="font-xs font-extralight">
+          <span className="font-light font-xs">
             {start} - {end}
           </span>
           <p className="font-light card-side">{description}</p>

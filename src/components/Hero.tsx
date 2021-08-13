@@ -10,13 +10,13 @@ const Hero: React.FC<HeroProps> = ({
 }) => {
   return (
     <div
-      className="min-h-screen pt-0 mt-0 antialiased hero bg-gradient-to-br from-primary to-secondary text-primary-content"
+      className="relative min-h-screen pt-0 mt-0 antialiased hero bg-gradient-to-br from-primary to-secondary text-primary-content"
       style={{
         backgroundImage: `url(${image})`,
       }}
       id="home"
     >
-      <div className="fill-current  custom-shape-divider-bottom-1628871186">
+      <div className="fill-current custom-shape-divider-bottom-1628871186">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"

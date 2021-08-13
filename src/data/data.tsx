@@ -67,7 +67,7 @@ export const projects: ProjectCardProps[] = [
     projectName: "Awesome Portfolio",
     projectDescription:
       "A portfolio of my work, where all the projects I've made are listed. The wesbite is made using latest technologies",
-    projectImageLogo: "https://picsum.photos/600/314",
+    projectImageLogo: `https://picsum.photos/id/1/600/314`,
     link: "https://piyushmehta.com",
     buttonText: "View Project",
     tech: ["React", "TailwindCSS", "CSS", "Javascript"],
@@ -75,19 +75,21 @@ export const projects: ProjectCardProps[] = [
   {
     id: 2,
     projectName: "Awesome Portfolio",
-    projectDescription: "A portfolio of my work",
-    projectImageLogo: "https://picsum.photos/600/314",
+    projectDescription:
+      "A portfolio of my work, where all the projects I've made are listed. The wesbite is made using latest technologies",
+    projectImageLogo: `https://picsum.photos/id/2/600/314`,
     link: "https://piyushmehta.com",
     buttonText: "View Project",
-    tech: ["hello", "world"],
+    tech: ["React", "TailwindCSS", "CSS", "Javascript"],
   },
   {
     id: 3,
     projectName: "Awesome Portfolio",
-    projectDescription: "A portfolio of my work",
-    projectImageLogo: "https://picsum.photos/600/314",
+    projectDescription:
+      "A portfolio of my work, where all the projects I've made are listed. The wesbite is made using latest technologies",
+    projectImageLogo: `https://picsum.photos/id/3/600/314`,
     link: "https://piyushmehta.com",
     buttonText: "View Project",
-    tech: ["hello", "world"],
+    tech: ["React", "TailwindCSS", "CSS", "Javascript"],
   },
 ];

@@ -18,7 +18,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       whileTap={{ scale: 0.9 }}
       key={id}
     >
-      <div className="mx-6 card glass text-base-content">
+      <div
+        className={`mx-6 card ${
+          id % 2 === 0
+            ? `bg-secondary text-secondary-content`
+            : `bg-primary text-primary-content`
+        }`}
+      >
         <figure className="p-6">
           <img
             src={projectImageLogo}
@@ -31,12 +37,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <p>{projectDescription}</p>
           <div className="flex">
             {tech.map((tech) => (
-              <div className="my-2 mr-2 badge badge-secondary">{tech} </div>
+              <div
+                className={`my-2 mr-2 badge ${
+                  id % 2 === 0
+                    ? `text-primary-content badge-primary`
+                    : `text-secondary-content badge-secondary`
+                }`}
+              >
+                {tech}{" "}
+              </div>
             ))}
           </div>
           <div className="card-actions">
             <a href={link}>
-              <button className="rounded-full btn glass text-base-content">
+              <button
+                className={`rounded-full btn ${
+                  id % 2 === 0
+                    ? `text-primary-content btn-primary`
+                    : `text-secondary-content btn-secondary`
+                }`}
+              >
                 {buttonText}
               </button>
             </a>

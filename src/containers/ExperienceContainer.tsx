@@ -5,7 +5,7 @@ import { EXPERIENCE, SECTIONS } from "../data/data";
 
 const ExperienceContainer: React.FC = () => {
   return (
-    <>
+    <div>
       <Heading heading={SECTIONS[1]} id="experience" />
       <div className="relative h-full p-10 overflow-hidden wrap">
         <div className="absolute h-full border border-accent border-2-2 border-opacity-20 left-1/2 "></div>
@@ -118,7 +118,7 @@ const ExperienceContainer: React.FC = () => {
           </div>
         </div> */}
       </div>
-    </>
+    </div>
   );
 };
 

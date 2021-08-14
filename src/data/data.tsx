@@ -126,4 +126,9 @@ export const skills: SkillsProps[] = [
     skill: "Java",
     level: Math.floor(Math.random() * 100) + 1,
   },
+  {
+    id: 6,
+    skill: "Googling",
+    level: Math.floor(Math.random() * 100) + 1,
+  },
 ];

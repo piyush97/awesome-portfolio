@@ -1,12 +1,11 @@
 import { HeartIcon } from "@heroicons/react/solid";
 import React from "react";
 import { MENU, NAME } from "../data/data";
-
 const Footer: React.FC = () => {
   return (
     <>
-      <div className="antialiased text-center t">
-        <>
+      <div className="antialiased text-center ">
+        <div>
           <svg
             viewBox="0 -20 700 110"
             width="100%"
@@ -23,7 +22,8 @@ const Footer: React.FC = () => {
               className="fill-current"
             />
           </svg>
-        </>
+        </div>
+
         <div className="flex flex-col pt-3 bg-current md:items-center f-f-l">
           <h1 className="text-4xl font-black text-neutral-content">
             Piyush Mehta

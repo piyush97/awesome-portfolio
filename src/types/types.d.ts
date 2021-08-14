@@ -36,6 +36,7 @@ export type DrawerProps = {
 export type HeadingProps = {
   heading: string;
   id: string;
+  illustration?: unknown;
 };
 
 export type HeroProps = {

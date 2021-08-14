@@ -21,7 +21,7 @@ const HomeContainer: React.FC = () => {
   const [menuShow, showMenu] = useState(false);
 
   return (
-    <div className="antialiased bg-primary-content text-primary">
+    <div className="antialiased  bg-primary-content text-primary">
       <Seo
         lang="en"
         metaDescription={GREETING_DESCRIPTION}

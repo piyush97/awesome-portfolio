@@ -10,6 +10,7 @@ import {
   IMAGE,
   KEYWORDS,
   NAME,
+  URL,
 } from "../data/data";
 import ExperienceContainer from "./ExperienceContainer";
 import ProjectsContainer from "./ProjectsContainer";
@@ -19,6 +20,7 @@ const HomeContainer: React.FC = () => {
   return (
     <div className="antialiased bg-primary-content text-primary">
       <Seo
+        url={URL}
         lang="en"
         metaDescription={GREETING_DESCRIPTION}
         keywords={KEYWORDS}

@@ -1,3 +1,4 @@
+import Image from "../assets/social.jpg";
 import {
   ImageType,
   MenuProps,
@@ -5,7 +6,7 @@ import {
   SkillsProps,
   TimelineProps,
 } from "../types/types";
-
+export const URL = "https://awesome-portfolio.piyushmehta.com";
 export const NAME = "Piyush Mehta";
 
 export const SECTIONS = ["Home", "Experience", "Projects", "Skills"];
@@ -67,7 +68,7 @@ export const KEYWORDS = [
   "Awesome Portfolio",
 ];
 export const IMAGE: ImageType = {
-  src: "https://picsum.photos/600/314",
+  src: Image,
   height: "600",
   width: "314",
 };

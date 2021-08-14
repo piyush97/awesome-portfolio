@@ -14,6 +14,7 @@ type ImageType = {
 };
 export type SEOProps = {
   lang: string;
+  url: string;
   title: string;
   metaDescription: string;
   keywords: string[];

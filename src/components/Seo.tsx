@@ -4,6 +4,7 @@ import { SEOProps } from "../types/types";
 
 const Seo: React.FC<SEOProps> = ({
   lang,
+  url,
   metaDescription,
   keywords,
   title,
@@ -59,7 +60,12 @@ const Seo: React.FC<SEOProps> = ({
         },
       ]}
       title={title}
-    />
+    >
+      <meta property="og:url" content={url} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:image" content={image} />
+    </Helmet>
   );
 };
 

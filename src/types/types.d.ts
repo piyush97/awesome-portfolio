@@ -35,7 +35,7 @@ export type DrawerProps = {
 };
 export type HeadingProps = {
   heading: string;
-  id: string;
+  id?: string;
   illustration?: unknown;
 };
 

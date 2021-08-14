@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { Link } from "react-scroll";
 import { HeroProps } from "../types/types";
 
 const Hero: React.FC<HeroProps> = ({
@@ -49,7 +50,11 @@ const Hero: React.FC<HeroProps> = ({
           >
             <h1 className="mb-5 text-5xl font-bold ">{greetingText}</h1>
             <p className="mb-5">{greetingDescription}</p>
-            <button className="transition btn btn-primary">{buttonText}</button>
+            <Link to={"experience"} spy={true} smooth={true} duration={300}>
+              <button className="transition btn btn-primary">
+                {buttonText}
+              </button>
+            </Link>
           </motion.div>
         </div>
       </div>

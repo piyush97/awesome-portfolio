@@ -5,7 +5,8 @@ import {
   MenuIcon,
   XIcon,
 } from "@heroicons/react/solid";
-import React from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeProvider";
 import { MENU, NAME } from "../data/data";
@@ -13,6 +14,7 @@ import { NavbarProps } from "../types/types";
 import { ThemeList } from "../utils/themeList";
 
 const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
+  const [rotation, setRotation] = useState(0);
   const { setTheme } = useTheme();
   return (
     <div className="inset-x-0 top-0 z-50 antialiased transition duration-300 shadow-lg navbar bg-neutral lg:fixed text-neutral-content">
@@ -30,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
               smooth={true}
               duration={300}
               className={
-                "btn-primary btn-ghost btn-sm rounded-btn  cursor-pointer"
+                "btn-primary btn-ghost btn-sm rounded-btn cursor-pointer"
               }
             >
               {name}
@@ -40,19 +42,32 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
       </div>
 
       <div className="flex-none">
-        <button
-          className="btn btn-square btn-ghost lg:hidden"
-          onClick={() => {
-            menuShow ? showMenu(false) : showMenu(true);
-          }}
-        >
-          {!menuShow ? (
-            <MenuIcon className="w-5 h-5 transition duration-300 lg:hidden" />
-          ) : (
-            <XIcon className="w-5 h-5 transition duration-300 lg:hidden" />
-          )}
-        </button>
-
+        <AnimatePresence>
+          <button
+            className="btn btn-square btn-ghost lg:hidden"
+            onClick={() => {
+              menuShow ? showMenu(false) : showMenu(true);
+            }}
+          >
+            {!menuShow ? (
+              <motion.div
+                animate={{ rotate: rotation }}
+                transition={{ delay: 0.2 }}
+                onClick={() => setRotation(rotation + 720)}
+              >
+                <MenuIcon className="w-5 h-5 lg:hidden" />
+              </motion.div>
+            ) : (
+              <motion.div
+                animate={{ rotate: rotation }}
+                transition={{ delay: 0.2 }}
+                onClick={() => setRotation(rotation + 720)}
+              >
+                <XIcon className="w-5 h-5 lg:hidden" />
+              </motion.div>
+            )}
+          </button>
+        </AnimatePresence>
         <div className="dropdown dropdown-end lg:flex">
           <div tabIndex={0} className="btn btn-ghost rounded-btn ">
             <ColorSwatchIcon className="w-5 h-5 mr-2" />{" "}

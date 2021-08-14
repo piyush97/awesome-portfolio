@@ -1,5 +1,6 @@
 import { HeartIcon } from "@heroicons/react/solid";
 import React from "react";
+import { Link } from "react-scroll";
 import { MENU, NAME } from "../data/data";
 const Footer: React.FC = () => {
   return (
@@ -31,10 +32,20 @@ const Footer: React.FC = () => {
 
           <div className="my-3 text-base text-center text-neutral-content ">
             <ul className="items-center md:flex">
-              {MENU.map(({ key, name }) => (
-                <li className="pt-2 cursor-pointer md:mr-6 lg:py-0" key={key}>
+              {MENU.map(({ key, name, route }) => (
+                <Link
+                  key={key}
+                  activeClass="btn btn-ghost btn-sm rounded-btn cursor-pointer active font-extrabold text-secondary-focus transition "
+                  to={route}
+                  spy={true}
+                  smooth={true}
+                  duration={300}
+                  className={
+                    "btn-primary btn-ghost btn-sm rounded-btn  pt-2 cursor-pointer md:mr-6 lg:py-0"
+                  }
+                >
                   {name}
-                </li>
+                </Link>
               ))}
             </ul>
           </div>

@@ -1,23 +1,50 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import {
   ChevronDownIcon,
   ColorSwatchIcon,
   MenuIcon,
 } from "@heroicons/react/solid";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
+import { ReactComponent as Logo } from "../assets/logo.svg";
 import { useTheme } from "../context/ThemeProvider";
 import { MENU, NAME } from "../data/data";
 import { NavbarProps } from "../types/types";
 import { ThemeList } from "../utils/themeList";
 
 const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
+  let listener = null;
+  const [scrollState, setScrollState] = useState(false);
   const { setTheme } = useTheme();
+  useEffect(() => {
+    listener = document.addEventListener("scroll", () => {
+      var scrolled = document.scrollingElement.scrollTop;
+      if (scrolled >= 120) {
+        if (!scrollState) {
+          setScrollState(true);
+        }
+      } else {
+        if (scrollState) {
+          setScrollState(false);
+        }
+      }
+    });
+    return () => {
+      document.removeEventListener("scroll", listener);
+    };
+  }, [scrollState]);
   return (
     <div className="fixed z-50 w-full h-full bg-transparentshadow drawer">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="flex flex-col h-full drawer-content ">
-        <div className="w-full bg-neutral text-neutral-content navbar">
+        <div
+          className={`${
+            scrollState
+              ? `inset-x-0 top-0 z-50 w-full transition duration-300 ease-in-out border-b border-transparent bg-primary text-primary-content fixed   navbar`
+              : `fixed inset-x-0 top-0 z-50 w-full transition duration-300 ease-in-out bg-transparent border-b border-transparent text-primary-content navbar`
+          }`}
+        >
           <div className="flex-none lg:hidden">
             <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
               <MenuIcon className="w-5 h-5 lg:hidden" />
@@ -25,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
           </div>
 
           <div className="flex-1 px-2 mx-2">
-            <span>{NAME}</span>
+            {scrollState ? <Logo className="w-20 h-12 fill-current " /> : NAME}
           </div>
           <div className="flex-none navbar-end ">
             <div className="dropdown dropdown-end lg:flex">
@@ -63,13 +90,13 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
               {MENU.map(({ key, name, route }) => (
                 <Link
                   key={key}
-                  activeClass="btn btn-ghost btn-sm rounded-btn cursor-pointer active font-extrabold text-secondary-focus transition"
+                  activeClass="btn btn-ghost btn-sm rounded-btn cursor-pointer active font-extrabold transition duration-300 ease-in-out"
                   to={route}
                   spy={true}
                   smooth={true}
                   duration={300}
                   className={
-                    "btn-primary btn-ghost btn-sm rounded-btn cursor-pointer"
+                    "btn-primary btn-ghost btn-sm rounded-btn cursor-pointer transition duration-300 ease-in-out"
                   }
                 >
                   {name}

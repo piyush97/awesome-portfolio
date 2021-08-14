@@ -22,7 +22,6 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
         <h1 className="mx-auto text-lg font-semibold text-white">{num}</h1>
       </div>
       <motion.div
-        // animate={num % 2 === 0 ? { x: [100 + num, 0] } : { x: [100 + num, 0] }}
         transition={{ duration: 0.25 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

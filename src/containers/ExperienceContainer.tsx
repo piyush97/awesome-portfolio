@@ -3,8 +3,19 @@ import { ReactComponent as Illustration } from "../assets/experience.svg";
 import Heading from "../components/Heading";
 import TimelineCard from "../components/TimelineCard";
 import { EXPERIENCE, SECTIONS } from "../data/data";
+import AnimateVisible from "../utils/AnimateVisible";
 
 const ExperienceContainer: React.FC = () => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.5,
+      },
+    },
+  };
+
   return (
     <div className="mx-3 lg:mx-12">
       <Heading
@@ -14,9 +25,10 @@ const ExperienceContainer: React.FC = () => {
       />
       <div className="relative h-full p-10 overflow-hidden wrap">
         <div className="absolute h-full border border-accent border-2-2 border-opacity-20 left-1/2 "></div>
+
         {EXPERIENCE.map(
           ({ key, company, position, description, end, start, logo }) => (
-            <div key={key}>
+            <AnimateVisible key={key}>
               {key % 2 === 0 ? (
                 <>
                   <TimelineCard
@@ -30,30 +42,8 @@ const ExperienceContainer: React.FC = () => {
                     description={description}
                     company={company}
                   />
-                  {/* <div className="flex items-center justify-between w-full mb-8 right-timeline">
-                    <div className="order-1 w-5/12"></div>
-                    <div className="z-20 flex items-center order-1 w-8 h-8 bg-gray-800 rounded-full shadow-xl">
-                      <h1 className="mx-auto text-lg font-semibold text-white">
-                        {key}
-                      </h1>
-                    </div>
-                    <div className="order-1 w-5/12 shadow-lg card bg-primary text-primary-content">
-                      <div className="card-body">
-                        <img src={logo} alt={company} className="w-20" />
-
-                        <span className="py-0 font-thin card-subtitle font-xs card-side">
-                          {position}
-                        </span>
-                        <span className="font-xs font-extralight">
-                          {start} - {end}
-                        </span>
-                        <p className="font-light card-side">{description}</p>
-                      </div>
-                    </div>
-                  </div> */}
                 </>
               ) : (
-                // <div className="flex flex-row-reverse items-center justify-between w-full mb-8 left-timeline">
                 <TimelineCard
                   styling="flex-row-reverse  left-timeline"
                   key={key}
@@ -65,9 +55,8 @@ const ExperienceContainer: React.FC = () => {
                   description={description}
                   company={company}
                 />
-                // </div>
               )}
-            </div>
+            </AnimateVisible>
           )
         )}
         {/* <div className="absolute h-full border border-accent border-2-2 border-opacity-20 left-1/2 "></div>

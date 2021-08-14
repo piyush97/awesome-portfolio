@@ -50,6 +50,15 @@ export const EXPERIENCE: TimelineProps[] = [
     end: "2016-01-01",
     description: "I worked on the frontend of Microsoft's new search engine.",
   },
+  {
+    key: 4,
+    company: "Netflix",
+    position: "Software Engineer",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png",
+    start: "2015-01-01",
+    end: "2016-01-01",
+    description: "I worked on the frontend of Netflix.",
+  },
 ];
 export const KEYWORDS = [
   "Developer",

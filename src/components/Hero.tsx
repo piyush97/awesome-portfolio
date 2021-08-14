@@ -18,12 +18,13 @@ const Hero: React.FC<HeroProps> = ({
       <div className="fill-current custom-shape-divider-bottom-1628871186">
         <HeroIllustration />
       </div>
-      <div className="inline-block w-full transform scale-125 opacity-5 -rotate-12 text-neutral">
-        <Illustration className="absolute fill-current lg:max-h-20 max-h-20 top-20" />
-      </div>
 
-      <div className="text-center hero-content text-neutral-content">
-        <div className="max-w-md">
+      <div className="text-justify hero-content text-neutral-content">
+        <Illustration
+          className="hidden fill-current lg:flex "
+          style={{ width: "350px" }}
+        />
+        <div className="max-w-md ml-10">
           <motion.div
             animate={{ scale: [0.5, 1] }}
             transition={{ duration: 0.5 }}

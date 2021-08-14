@@ -35,7 +35,8 @@ export type DrawerProps = {
 };
 export type HeadingProps = {
   heading: string;
-  id: string;
+  id?: string;
+  illustration?: unknown;
 };
 
 export type HeroProps = {
@@ -57,4 +58,10 @@ export type ProjectCardProps = {
   tech: string[];
   link: string;
   buttonText: string;
+};
+
+export type SkillsProps = {
+  id: number;
+  skill: string;
+  level: number;
 };

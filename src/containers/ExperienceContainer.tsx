@@ -6,16 +6,6 @@ import { EXPERIENCE, SECTIONS } from "../data/data";
 import AnimateVisible from "../utils/AnimateVisible";
 
 const ExperienceContainer: React.FC = () => {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.5,
-      },
-    },
-  };
-
   return (
     <div className="mx-3 lg:mx-12">
       <Heading

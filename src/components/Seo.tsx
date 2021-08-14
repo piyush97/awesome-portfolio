@@ -22,11 +22,6 @@ const Seo: React.FC<SEOProps> = ({
       ]}
     >
       <html data-theme={theme} />
-
-      <meta property="og:url" content={url} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:image" content={image} />
     </Helmet>
   );
 };

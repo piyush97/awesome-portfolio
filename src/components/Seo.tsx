@@ -10,6 +10,7 @@ const Seo: React.FC<SEOProps> = ({
   title,
   author,
   image: metaImage,
+  theme,
 }) => {
   const image = metaImage && metaImage.src ? `${metaImage.src}` : null;
   return (
@@ -18,49 +19,10 @@ const Seo: React.FC<SEOProps> = ({
       meta={[
         { name: `description`, content: metaDescription },
         { name: `keywords`, content: keywords.join(",") },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:creator`,
-          content: author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          property: "og:image",
-          content: image,
-        },
-        {
-          property: "og:image:width",
-          content: metaImage.width,
-        },
-        {
-          property: "og:image:height",
-          content: metaImage.height,
-        },
-        {
-          name: "twitter:card",
-          content: "summary_large_image",
-        },
       ]}
-      title={title}
     >
+      <html data-theme={theme} />
+
       <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />

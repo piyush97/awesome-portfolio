@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = ({
       <div className="text-justify hero-content text-neutral-content">
         <Illustration
           className="hidden fill-current lg:flex "
-          style={{ width: "350px" }}
+          style={{ width: "450px" }}
         />
         <div className="max-w-md ml-10">
           <motion.div

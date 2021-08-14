@@ -12,7 +12,7 @@ const Seo: React.FC<SEOProps> = ({
   image: metaImage,
   theme,
 }) => {
-  const image = metaImage && metaImage.src ? `${metaImage.src}` : null;
+  // const image = metaImage && metaImage.src ? `${metaImage.src}` : null;
   return (
     <Helmet
       htmlAttributes={{ lang }}

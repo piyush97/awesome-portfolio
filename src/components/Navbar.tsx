@@ -90,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
               {MENU.map(({ key, name, route }) => (
                 <Link
                   key={key}
-                  activeClass="btn btn-ghost btn-sm rounded-btn cursor-pointer active font-extrabold transition duration-300 ease-in-out"
+                  activeClass="btn btn-ghost btn-sm rounded-btn cursor-pointer active font-bold transition duration-300 ease-in-out"
                   to={route}
                   spy={true}
                   smooth={true}
@@ -112,7 +112,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
           {MENU.map(({ key, name, route }) => (
             <Link
               key={key}
-              activeClass="active font-extrabold text-secondary-focus h-10 my-2"
+              activeClass="btn-ghost btn-sm active font-bold text-secondary-focus h-10 my-2"
               to={route}
               spy={true}
               smooth={true}

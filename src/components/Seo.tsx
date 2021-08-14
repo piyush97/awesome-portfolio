@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { URL } from "../data/data";
 import { SEOProps } from "../types/types";
 
 const Seo: React.FC<SEOProps> = ({
@@ -10,61 +11,19 @@ const Seo: React.FC<SEOProps> = ({
   title,
   author,
   image: metaImage,
+  theme,
 }) => {
-  const image = metaImage && metaImage.src ? `${metaImage.src}` : null;
+  // const image = metaImage && metaImage.src ? `${metaImage.src}` : null;
   return (
-    <Helmet
-      htmlAttributes={{ lang }}
-      meta={[
-        { name: `description`, content: metaDescription },
-        { name: `keywords`, content: keywords.join(",") },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:creator`,
-          content: author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          property: "og:image",
-          content: image,
-        },
-        {
-          property: "og:image:width",
-          content: metaImage.width,
-        },
-        {
-          property: "og:image:height",
-          content: metaImage.height,
-        },
-        {
-          name: "twitter:card",
-          content: "summary_large_image",
-        },
-      ]}
-      title={title}
-    >
-      <meta property="og:url" content={url} />
+    <Helmet>
+      <html data-theme={theme} />
+      <title>{title}</title>
+      <meta name="title" content={title} />
+      <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
+      <meta property="og:image" content={metaImage.src} />
       <meta property="og:description" content={metaDescription} />
-      <meta property="og:image" content={image} />
+      <meta property="og:url" content={URL} />
     </Helmet>
   );
 };

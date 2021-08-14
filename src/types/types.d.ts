@@ -20,6 +20,7 @@ export type SEOProps = {
   keywords: string[];
   author: string;
   image: ImageType;
+  theme: string;
 };
 export type MenuProps = {
   key: number;

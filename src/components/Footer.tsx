@@ -1,32 +1,17 @@
 import { HeartIcon } from "@heroicons/react/solid";
 import React from "react";
 import { Link } from "react-scroll";
+import { ReactComponent as Illustration } from "../assets/footer.svg";
 import { MENU, NAME } from "../data/data";
 const Footer: React.FC = () => {
   return (
     <>
       <div className="px-0 py-0 mx-0 my-0 antialiased text-center">
-        <svg
-          viewBox="0 -20 700 110"
-          width="100%"
-          height="110"
-          preserveAspectRatio="none"
-          className="fill-current"
-        >
-          <path
-            transform="translate(0, -20)"
-            d="M0,10 c80,-22 240,0 350,18 c90,17 260,7.5 350,-20 v50 h-700"
-          />
-          <path
-            d="M0,10 c80,-18 230,-12 350,7 c80,13 260,17 350,-5 v100 h-700z"
-            className="fill-current"
-          />
-        </svg>
+        <Illustration />
         <div className="flex flex-col pt-3 bg-current md:items-center f-f-l">
           <h1 className="text-4xl font-black text-neutral-content">
             Piyush Mehta
           </h1>
-
           <div className="my-3 text-base text-center text-neutral-content ">
             <ul className="items-center md:flex">
               {MENU.map(({ key, name, route }) => (

@@ -15,10 +15,9 @@ const Seo: React.FC<SEOProps> = ({
 }) => {
   // const image = metaImage && metaImage.src ? `${metaImage.src}` : null;
   return (
-    <Helmet htmlAttributes={{ lang }}>
+    <Helmet>
       <html data-theme={theme} />
       <title>{title}</title>
-
       <meta name="title" content={title} />
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />

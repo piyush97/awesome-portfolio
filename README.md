@@ -6,3 +6,9 @@
 
 ## How to use?
 
+
+
+
+
+Made using TailwindCSS and React
+

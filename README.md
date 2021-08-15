@@ -3,6 +3,9 @@
 
 A template for all of you to create and deploy an Awesome Portfolio for free without writing code
 
+This Template is still in beta stage if you find any bugs, please create an issue for that
+
+
 ## Badges
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)

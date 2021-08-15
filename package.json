@@ -21,7 +21,6 @@
     "react-intersection-observer": "^8.32.0",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.3",
-    "react-snap": "^1.23.0",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
@@ -29,8 +28,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject",
-    "postbuild": "react-snap"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

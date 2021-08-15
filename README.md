@@ -5,9 +5,11 @@ A template for all of you to create and deploy an Awesome Portfolio for free wit
 
 ## Badges
 
-Add badges from somewhere like: [shields.io](https://shields.io/)
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+![GitHub followers](https://img.shields.io/github/followers/piyush97)
+![GitHub last commit](https://img.shields.io/github/last-commit/piyush97/awesome-portfolio)
+![GitHub issues](https://img.shields.io/github/issues/piyush97/awesome-portfolio)
 
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs) ![GitHub followers](https://img.shields.io/github/followers/piyush97) ![GitHub last commit](https://img.shields.io/github/last-commit/piyush97/awesome-portfolio) ![GitHub issues](https://img.shields.io/github/issues/piyush97/awesome-portfolio)
 ## Demo
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)

@@ -12,12 +12,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   id,
 }) => {
   return (
-    <motion.div
-      transition={{ duration: 0.25 }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      key={id}
-    >
+    <motion.div transition={{ duration: 0.25 }} key={id}>
       <div
         className={`mx-6 card ${
           id % 2 === 0

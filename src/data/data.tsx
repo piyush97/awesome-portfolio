@@ -86,23 +86,23 @@ export const projects: ProjectCardProps[] = [
   },
   {
     id: 2,
-    projectName: "Awesome Portfolio",
+    projectName: "Sawan",
     projectDescription:
-      "A portfolio of my work, where all the projects I've made are listed. The wesbite is made using latest technologies",
+      "Online Immunity store serving PAN India. Serving 10000 requests per day organically. Customer base of 10k+ people",
     projectImageLogo: `https://picsum.photos/id/2/600/314`,
-    link: "https://piyushmehta.com",
+    link: "https://sawandryfruits.com",
     buttonText: "View Project",
-    tech: ["React", "TailwindCSS", "CSS", "Javascript"],
+    tech: ["React", "TailwindCSS", "Kubernetes", "NodeJS"],
   },
   {
     id: 3,
-    projectName: "Awesome Portfolio",
+    projectName: "Meaww Influencers Dashboard",
     projectDescription:
-      "A portfolio of my work, where all the projects I've made are listed. The wesbite is made using latest technologies",
+      "A complete Comprehensive dashboard built for the influencers. Used to track their growth and reach.",
     projectImageLogo: `https://picsum.photos/id/3/600/314`,
-    link: "https://piyushmehta.com",
+    link: "https://meaww.com",
     buttonText: "View Project",
-    tech: ["React", "TailwindCSS", "CSS", "Javascript"],
+    tech: ["React", "Redux", "SCSS", "Javascript"],
   },
 ];
 /**

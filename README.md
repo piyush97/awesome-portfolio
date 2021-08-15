@@ -12,7 +12,7 @@ A template for all of you to create and deploy an Awesome Portfolio for free wit
 
 ## Demo
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](/demo1.gif)
 
   
 ## Run Locally

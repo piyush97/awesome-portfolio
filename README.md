@@ -69,7 +69,11 @@ To deploy this project for free click this: [![Deploy with Vercel](https://verce
 
 ## How to use this
 
-Click on use this template
+• Click on use this template
+• change the text at `src/data/data.tsx`
+• `npm install`
+• `npm start`
+• Done!
 
 ![demo](/demo.gif)
 ## License

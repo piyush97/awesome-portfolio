@@ -69,6 +69,8 @@ To deploy this project for free click this: [![Deploy with Vercel](https://verce
 
 ## How to use this
 
+Click on use this template
+
 ![demo](/demo.gif)
 ## License
 

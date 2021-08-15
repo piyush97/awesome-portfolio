@@ -35,8 +35,8 @@ const Hero: React.FC<HeroProps> = ({
               to={"experience"}
               spy={true}
               smooth={true}
-              duration={300}
-              className="transition cursor-pointer btn btn-primary"
+              duration={500}
+              className="transition rounded-full cursor-pointer btn btn-primary"
             >
               {buttonText}
             </Link>

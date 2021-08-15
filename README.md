@@ -78,7 +78,7 @@ To deploy this project for free click this: [![Deploy with Vercel](https://verce
 ![demo](/demo.gif)
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](/LICENSE)
 
   
 ## Support

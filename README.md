@@ -5,6 +5,7 @@ A template for all of you to create and deploy an Awesome Portfolio for free wit
 
 This Template is still in beta stage if you find any bugs, please create an issue for that
 
+[EXPLAINATION VIDEO](https://youtu.be/Tbvt2UMxdiE)
 
 ## Badges
 

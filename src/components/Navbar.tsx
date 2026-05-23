@@ -1,4 +1,4 @@
-import { ColorSwatchIcon, MenuIcon, XIcon } from "@heroicons/react/solid";
+import { SwatchIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeProvider";
@@ -66,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
             className="btn btn-ghost btn-sm rounded-full gap-2"
             aria-label="Change theme"
           >
-            <ColorSwatchIcon className="w-4 h-4" aria-hidden="true" />
+            <SwatchIcon className="w-4 h-4" aria-hidden="true" />
             <span className="hidden lg:inline text-xs">Theme</span>
           </button>
           <ul
@@ -97,9 +97,9 @@ const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
           aria-expanded={!!menuShow}
         >
           {menuShow ? (
-            <XIcon className="w-5 h-5" aria-hidden="true" />
+            <XMarkIcon className="w-5 h-5" aria-hidden="true" />
           ) : (
-            <MenuIcon className="w-5 h-5" aria-hidden="true" />
+            <Bars3Icon className="w-5 h-5" aria-hidden="true" />
           )}
         </button>
       </div>

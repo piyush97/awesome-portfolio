@@ -1,13 +1,14 @@
 import React from "react";
 import { HeadingProps } from "../types/types";
 
-const Heading: React.FC<HeadingProps> = ({ heading, id, illustration }) => {
+const Heading: React.FC<HeadingProps> = ({ heading, id }) => {
   return (
-    <div className="grid my-2 mt-2 center lg:grid-cols-2 auto-rows-fr ">
-      <div className="hidden pt-3 antialiased lg:flex" id={id}>
-        {illustration}
-      </div>
-      <div className="pt-10 ml-10 text-7xl md:text-center">{heading}</div>
+    <div className="mb-12" id={id}>
+      <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">
+        — {heading}
+      </p>
+      <h2 className="text-4xl lg:text-5xl font-black text-base-content">{heading}</h2>
+      <div className="mt-4 w-16 h-1 bg-gradient-brand rounded-full" aria-hidden="true" />
     </div>
   );
 };

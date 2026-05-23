@@ -3,7 +3,6 @@ import React from "react";
 import { TimelineCardProps } from "../types/types";
 
 const TimelineCard: React.FC<TimelineCardProps> = ({
-  key,
   num,
   company,
   end,
@@ -11,38 +10,43 @@ const TimelineCard: React.FC<TimelineCardProps> = ({
   description,
   position,
   logo,
-  styling,
 }) => {
+  const startYear = new Date(start).getFullYear();
+  const endYear = end === "Present" ? "Present" : new Date(end).getFullYear();
+
   return (
-    <div
-      className={`flex items-center justify-between w-full mb-8  ${styling}`}
+    <motion.div
+      whileHover={{ x: 4 }}
+      transition={{ duration: 0.2 }}
+      className="relative pl-8 pb-10 border-l-2 border-base-300 last:border-transparent last:pb-0"
     >
-      <div className="order-1 w-5/12"></div>
-      <div className="z-20 flex items-center order-1 w-8 h-8 bg-gray-800 rounded-full shadow-xl">
-        <h1 className="mx-auto text-lg font-semibold text-white">{num}</h1>
-      </div>
-      <motion.div
-        transition={{ duration: 0.25 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className={
-          num % 2 === 0
-            ? "order-1 w-5/12 shadow-2xl card lg:card-side bg-primary text-primary-content"
-            : "order-1 w-5/12 shadow-2xl card lg:card-side bg-secondary text-secondary-content"
-        }
-      >
-        <div className="card-body">
-          <img src={logo} alt={company} className="w-20" />
-          <span className="py-0 font-bold card-subtitle font-xs card-side">
-            {position}
-          </span>
-          <span className="font-light font-xs">
-            {start} - {end}
-          </span>
-          <p className="font-light card-side">{description}</p>
+      {/* Timeline dot */}
+      <div
+        className="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary border-2 border-base-100"
+        aria-hidden="true"
+      />
+
+      {/* Date badge */}
+      <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full bg-primary bg-opacity-10 text-primary mb-3">
+        {startYear} — {endYear}
+      </span>
+
+      {/* Card */}
+      <article className="bg-base-200 rounded-2xl p-6 border border-base-300 hover:border-primary hover:border-opacity-40 transition-colors">
+        <div className="flex items-start gap-4 mb-3">
+          <img
+            src={logo}
+            alt={`${company} logo`}
+            className="w-10 h-10 object-contain rounded-lg bg-white p-1 flex-shrink-0"
+          />
+          <div>
+            <h3 className="font-bold text-base-content text-lg leading-tight">{company}</h3>
+            <p className="text-primary font-medium text-sm">{position}</p>
+          </div>
         </div>
-      </motion.div>
-    </div>
+        <p className="text-base-content opacity-60 text-sm leading-relaxed">{description}</p>
+      </article>
+    </motion.div>
   );
 };
 

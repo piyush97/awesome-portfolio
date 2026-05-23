@@ -2,10 +2,81 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false,
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+      animation: {
+        'blob': 'blob 8s ease-in-out infinite',
+        'gradient': 'gradient 8s ease infinite',
+      },
+      keyframes: {
+        blob: {
+          '0%, 100%': { borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%' },
+          '25%': { borderRadius: '58% 42% 75% 25% / 76% 46% 54% 24%' },
+          '50%': { borderRadius: '50% 50% 33% 67% / 55% 27% 73% 45%' },
+          '75%': { borderRadius: '33% 67% 58% 42% / 63% 68% 32% 37%' },
+        },
+        gradient: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
+      },
+    },
   },
-  variants: {
-    extend: {},
-  },
+  variants: { extend: {} },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        "modern-dark": {
+          "primary": "#6366f1",
+          "primary-focus": "#4f46e5",
+          "primary-content": "#ffffff",
+          "secondary": "#8b5cf6",
+          "secondary-focus": "#7c3aed",
+          "secondary-content": "#ffffff",
+          "accent": "#06b6d4",
+          "accent-focus": "#0891b2",
+          "accent-content": "#ffffff",
+          "neutral": "#334155",
+          "neutral-focus": "#1e293b",
+          "neutral-content": "#f1f5f9",
+          "base-100": "#0f172a",
+          "base-200": "#1e293b",
+          "base-300": "#334155",
+          "base-content": "#f1f5f9",
+          "info": "#38bdf8",
+          "success": "#34d399",
+          "warning": "#fbbf24",
+          "error": "#f87171"
+        }
+      },
+      {
+        "modern-light": {
+          "primary": "#6366f1",
+          "primary-focus": "#4f46e5",
+          "primary-content": "#ffffff",
+          "secondary": "#8b5cf6",
+          "secondary-focus": "#7c3aed",
+          "secondary-content": "#ffffff",
+          "accent": "#06b6d4",
+          "accent-focus": "#0891b2",
+          "accent-content": "#ffffff",
+          "neutral": "#e2e8f0",
+          "neutral-focus": "#cbd5e1",
+          "neutral-content": "#1e293b",
+          "base-100": "#ffffff",
+          "base-200": "#f8fafc",
+          "base-300": "#f1f5f9",
+          "base-content": "#0f172a",
+          "info": "#38bdf8",
+          "success": "#34d399",
+          "warning": "#fbbf24",
+          "error": "#f87171"
+        }
+      },
+      "light",
+      "dark",
+    ],
+    darkTheme: "modern-dark",
+  },
 };

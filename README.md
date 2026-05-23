@@ -9,7 +9,9 @@ A modern, customizable developer portfolio template. Edit one file, deploy in mi
 
 ## Demo
 
-![App Screenshot](/demo1.gif)
+![Hero](/demo-hero.png)
+
+![Full page](/demo-full.png)
 
 ## Tech Stack
 

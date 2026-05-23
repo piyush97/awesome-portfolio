@@ -1,129 +1,132 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import {
-  ChevronDownIcon,
-  ColorSwatchIcon,
-  MenuIcon,
-} from "@heroicons/react/solid";
+import { ColorSwatchIcon, MenuIcon, XIcon } from "@heroicons/react/solid";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import { ReactComponent as Logo } from "../assets/logo.svg";
 import { useTheme } from "../context/ThemeProvider";
 import { MENU, NAME } from "../data/data";
 import { NavbarProps } from "../types/types";
 import { ThemeList } from "../utils/themeList";
 
 const Navbar: React.FC<NavbarProps> = ({ menuShow, showMenu }) => {
-  let listener = null;
-  const [scrollState, setScrollState] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { setTheme } = useTheme();
+
   useEffect(() => {
-    listener = document.addEventListener("scroll", () => {
-      var scrolled = document.scrollingElement.scrollTop;
-      if (scrolled >= 120) {
-        if (!scrollState) {
-          setScrollState(true);
-        }
-      } else {
-        if (scrollState) {
-          setScrollState(false);
-        }
-      }
-    });
-    return () => {
-      document.removeEventListener("scroll", listener);
+    const handleScroll = () => {
+      const scrollTop = document.scrollingElement?.scrollTop ?? 0;
+      setScrolled(scrollTop > 80);
     };
-  }, [scrollState]);
+    document.addEventListener("scroll", handleScroll);
+    return () => document.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const nameParts = NAME.split(" ");
+  const initials =
+    nameParts.length >= 2
+      ? `${nameParts[0][0]}${nameParts[1][0]}`
+      : nameParts[0][0];
+
   return (
-    <>
-      <div
-        className={`${
-          scrollState
-            ? `inset-x-0 top-0 z-50 w-full transition duration-300 ease-in-out border-b border-transparent bg-primary text-primary-content fixed   navbar`
-            : `fixed inset-x-0 top-0 z-50 w-full transition duration-300 ease-in-out bg-transparent border-b border-transparent text-primary-content navbar`
-        }`}
-      >
-        <div className=" dropdown dropdown-right lg:hidden">
-          <div tabIndex={0} className="btn btn-ghost rounded-btn">
-            <MenuIcon className="w-5 h-5" />
-          </div>
-          <ul
-            tabIndex={0}
-            className="p-2 shadow menu dropdown-content bg-base-100 text-neutral rounded-box w-52"
-          >
-            {MENU.map(({ key, name, route }) => (
+    <nav
+      className={`fixed inset-x-0 top-0 z-50 w-full transition-all duration-300 ${
+        scrolled ? "glass shadow-lg" : "bg-transparent"
+      }`}
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <div className="max-w-6xl mx-auto px-6 lg:px-16 flex items-center h-16">
+        {/* Logo */}
+        <div className="flex-1">
+          <span className="text-lg font-black text-gradient" aria-label={NAME}>
+            {initials}
+          </span>
+        </div>
+
+        {/* Desktop nav */}
+        <ul className="hidden lg:flex items-center gap-1 flex-none">
+          {MENU.map(({ key, name, route }) => (
+            <li key={key}>
               <Link
-                key={key}
-                activeClass="btn-primary btn-ghost btn-sm rounded-btn cursor-pointer transition duration-300 ease-in-out text-bold"
                 to={route}
                 spy={true}
                 smooth={true}
                 duration={500}
-                className={
-                  "btn-primary btn-ghost btn-sm rounded-btn cursor-pointer transition duration-300 ease-in-out"
-                }
+                className="px-4 py-2 text-sm font-medium text-base-content opacity-70 hover:opacity-100 hover:text-primary cursor-pointer transition-all rounded-full hover:bg-base-200 block"
+                activeClass="text-primary opacity-100"
               >
                 {name}
               </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Theme switcher */}
+        <div className="dropdown dropdown-end ml-4">
+          <button
+            tabIndex={0}
+            className="btn btn-ghost btn-sm rounded-full gap-2"
+            aria-label="Change theme"
+          >
+            <ColorSwatchIcon className="w-4 h-4" aria-hidden="true" />
+            <span className="hidden lg:inline text-xs">Theme</span>
+          </button>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu p-2 shadow-2xl bg-base-200 rounded-2xl w-48 mt-2 border border-base-300"
+          >
+            <li className="menu-title">
+              <span className="text-xs opacity-50">Themes</span>
+            </li>
+            {ThemeList.map(({ key, name, title, icon }) => (
+              <li key={key} role="menuitem">
+                <button
+                  onClick={() => setTheme(name)}
+                  className="text-sm flex gap-3 rounded-xl hover:bg-base-300 w-full text-left"
+                >
+                  <span aria-hidden="true">{icon}</span> {title}
+                </button>
+              </li>
             ))}
           </ul>
         </div>
 
-        <div className="flex-1 px-2 mx-2">
-          {scrollState ? <Logo className="w-20 h-12 fill-current " /> : NAME}
-        </div>
-        <div className="flex-none navbar-end ">
-          <div className="dropdown dropdown-end lg:flex">
-            <div tabIndex={0} className="btn btn-ghost rounded-btn ">
-              <ColorSwatchIcon className="w-5 h-5 mr-2" />{" "}
-              <span className="hidden 2xl:flex xl:flex lg:flex">
-                Change Theme{" "}
-              </span>
-              <ChevronDownIcon className="hidden w-5 h-5 2xl:flex xl:flex lg:flex" />
-            </div>
-            <ul
-              tabIndex={0}
-              className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52"
-            >
-              <li className="antialiased menu-title">
-                <span>Themes</span>
-              </li>
-              {ThemeList.map(({ key, name, title, icon }) => (
-                <li
-                  key={key}
-                  className="block text-sm antialiased font-medium text-base-content"
-                >
-                  <a onClick={() => setTheme(name)}>
-                    <span>
-                      {icon} <span className="ml-3">{title}</span>
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="flex-none hidden lg:block">
-          <ul className="menu horizontal">
-            {MENU.map(({ key, name, route }) => (
-              <Link
-                key={key}
-                activeClass="btn btn-ghost btn-sm rounded-btn cursor-pointer active font-bold transition duration-300 ease-in-out"
-                to={route}
-                spy={true}
-                smooth={true}
-                duration={500}
-                className={
-                  "btn-primary btn-ghost btn-sm rounded-btn cursor-pointer transition duration-300 ease-in-out"
-                }
-              >
-                {name}
-              </Link>
-            ))}
-          </ul>
-        </div>
+        {/* Mobile menu toggle */}
+        <button
+          className="lg:hidden btn btn-ghost btn-sm rounded-full ml-2"
+          onClick={() => showMenu(!menuShow)}
+          aria-label={menuShow ? "Close menu" : "Open menu"}
+          aria-expanded={!!menuShow}
+        >
+          {menuShow ? (
+            <XIcon className="w-5 h-5" aria-hidden="true" />
+          ) : (
+            <MenuIcon className="w-5 h-5" aria-hidden="true" />
+          )}
+        </button>
       </div>
-    </>
+
+      {/* Mobile dropdown */}
+      {menuShow && (
+        <div
+          className="lg:hidden bg-base-200 border-t border-base-300 px-6 py-4 flex flex-col gap-2"
+          role="menu"
+        >
+          {MENU.map(({ key, name, route }) => (
+            <Link
+              key={key}
+              to={route}
+              spy={true}
+              smooth={true}
+              duration={500}
+              onClick={() => showMenu(false)}
+              className="px-4 py-3 text-sm font-medium text-base-content hover:text-primary hover:bg-base-300 rounded-xl cursor-pointer transition-colors block"
+              role="menuitem"
+            >
+              {name}
+            </Link>
+          ))}
+        </div>
+      )}
+    </nav>
   );
 };
 

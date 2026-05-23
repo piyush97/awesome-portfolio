@@ -1,10 +1,15 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-const AnimateVisible: React.FC = ({ children }) => {
+interface AnimateVisibleProps {
+  children: React.ReactNode;
+  delay?: number;
+}
+
+const AnimateVisible: React.FC<AnimateVisibleProps> = ({ children, delay = 0 }) => {
   const controls = useAnimation();
-  const [ref, inView] = useInView();
+  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   useEffect(() => {
     if (inView) {
@@ -17,14 +22,18 @@ const AnimateVisible: React.FC = ({ children }) => {
       ref={ref}
       animate={controls}
       initial="hidden"
-      transition={{ duration: 0.2 }}
       variants={{
-        visible: { opacity: 1, scale: 1 },
-        hidden: { opacity: 0, scale: 0 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.5, delay, ease: "easeOut" },
+        },
+        hidden: { opacity: 0, y: 30 },
       }}
     >
       {children}
     </motion.div>
   );
 };
+
 export default AnimateVisible;

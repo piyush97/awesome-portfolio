@@ -3,9 +3,12 @@ import {
   ImageType,
   MenuProps,
   ProjectCardProps,
+  SkillGroup,
   SkillsProps,
+  SocialLinks,
   TimelineProps,
 } from "../types/types";
+
 export const URL = "https://awesome-portfolio.piyushmehta.com";
 export const NAME = "Piyush Mehta";
 
@@ -19,13 +22,24 @@ export const MENU: MenuProps[] = [
   { key: 4, route: "skills", name: SECTIONS[3] },
 ];
 
-export const GREETING_TEXT = "Hello, There";
+export const GREETING_TEXT = "Available for Work";
 export const GREETING_DESCRIPTION =
-  "Busy Developing a side project which will eventually be never done ";
+  "Busy Developing a side project which will eventually be never done";
+
+export const TAGLINE = "Full Stack Developer crafting exceptional digital experiences";
+export const ABOUT = "Passionate developer with expertise in building scalable, performant web apps. I turn ideas into reality with clean, efficient code.";
+export const CONTACT_TAGLINE = "Let's build something great together";
+
+export const SOCIAL_LINKS: SocialLinks = {
+  github: "https://github.com/piyush97",
+  linkedin: "https://linkedin.com/in/piyushmehta",
+  twitter: "https://twitter.com/piyush97dev",
+  email: "mailto:contact@piyushmehta.com",
+};
 
 export const EXPERIENCE: TimelineProps[] = [
   {
-    key: 1,
+    id: 1,
     company: "Google",
     position: "Software Engineer",
     logo: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
@@ -34,7 +48,7 @@ export const EXPERIENCE: TimelineProps[] = [
     description: "I worked on the frontend of Google's new search engine.",
   },
   {
-    key: 2,
+    id: 2,
     company: "Facebook",
     position: "Software Engineer",
     logo: "https://logos-world.net/wp-content/uploads/2020/04/Facebook-Logo.png",
@@ -43,7 +57,7 @@ export const EXPERIENCE: TimelineProps[] = [
     description: "I worked on the frontend of Facebook.",
   },
   {
-    key: 3,
+    id: 3,
     company: "Microsoft",
     position: "Software Engineer",
     logo: "https://www.backbase.com/wp-content/uploads/2020/05/Microsoft-Logo-PNG-Transparent.png",
@@ -52,7 +66,7 @@ export const EXPERIENCE: TimelineProps[] = [
     description: "I worked on the frontend of Microsoft's new search engine.",
   },
   {
-    key: 4,
+    id: 4,
     company: "Netflix",
     position: "Software Engineer",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png",
@@ -61,12 +75,14 @@ export const EXPERIENCE: TimelineProps[] = [
     description: "I worked on the frontend of Netflix.",
   },
 ];
+
 export const KEYWORDS = [
   "Developer",
   "front end developer based in India",
   "piyush mehta",
   "Awesome Portfolio",
 ];
+
 export const IMAGE: ImageType = {
   src: Image,
   height: "600",
@@ -78,7 +94,7 @@ export const projects: ProjectCardProps[] = [
     id: 1,
     projectName: "Awesome Portfolio",
     projectDescription:
-      "A portfolio of my work, where all the projects I've made are listed. The wesbite is made using latest technologies",
+      "A portfolio of my work, where all the projects I've made are listed. The website is made using latest technologies",
     projectImageLogo: `https://picsum.photos/id/1/600/314`,
     link: "https://piyushmehta.com",
     buttonText: "View Project",
@@ -105,40 +121,39 @@ export const projects: ProjectCardProps[] = [
     tech: ["React", "Redux", "SCSS", "Javascript"],
   },
 ];
+
 /**
  *  @type {SkillsProps}
  * skills
- * Kept level as random but you can hard code it if you want
  */
 export const skills: SkillsProps[] = [
+  { id: 1, skill: "Javascript", level: 90 },
+  { id: 2, skill: "React", level: 88 },
+  { id: 3, skill: "CSS", level: 85 },
+  { id: 4, skill: "HTML", level: 92 },
+  { id: 5, skill: "Java", level: 70 },
+  { id: 6, skill: "Googling", level: 99 },
+];
+
+export const SKILLS_GROUPED: SkillGroup[] = [
   {
-    id: 1,
-    skill: "Javascript",
-    level: Math.floor(Math.random() * 100) + 1,
+    category: "Frontend",
+    icon: "⚡",
+    skills: ["React", "TypeScript", "Next.js", "HTML/CSS", "Tailwind CSS", "Framer Motion"],
   },
   {
-    id: 2,
-    skill: "React",
-    level: Math.floor(Math.random() * 100) + 1,
+    category: "Backend",
+    icon: "🔧",
+    skills: ["Node.js", "Python", "REST APIs", "GraphQL", "PostgreSQL", "MongoDB"],
   },
   {
-    id: 3,
-    skill: "CSS",
-    level: Math.floor(Math.random() * 100) + 1,
+    category: "DevOps & Cloud",
+    icon: "☁️",
+    skills: ["Docker", "Kubernetes", "AWS", "CI/CD", "Linux", "Nginx"],
   },
   {
-    id: 4,
-    skill: "HTML",
-    level: Math.floor(Math.random() * 100) + 1,
-  },
-  {
-    id: 5,
-    skill: "Java",
-    level: Math.floor(Math.random() * 100) + 1,
-  },
-  {
-    id: 6,
-    skill: "Googling",
-    level: Math.floor(Math.random() * 100) + 1,
+    category: "Tools",
+    icon: "🛠️",
+    skills: ["Git", "VS Code", "Figma", "Jira", "Postman", "Webpack"],
   },
 ];

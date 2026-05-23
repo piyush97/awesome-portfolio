@@ -1,5 +1,5 @@
 export type TimelineProps = {
-  key: number;
+  id: number;
   company: string;
   position: string;
   logo: string;
@@ -7,11 +7,13 @@ export type TimelineProps = {
   end: string;
   description: string;
 };
-type ImageType = {
+
+export type ImageType = {
   src: string;
   width: string;
   height: string;
 };
+
 export type SEOProps = {
   lang: string;
   url: string;
@@ -22,11 +24,13 @@ export type SEOProps = {
   image: ImageType;
   theme: string;
 };
+
 export type MenuProps = {
   key: number;
   route: string;
   name: string;
 };
+
 export type TimelineCardProps = {
   styling: string;
   num: number;
@@ -35,6 +39,7 @@ export type TimelineCardProps = {
 export type DrawerProps = {
   menuShow: boolean;
 };
+
 export type HeadingProps = {
   heading: string;
   id?: string;
@@ -52,6 +57,7 @@ export type NavbarProps = {
   menuShow: unknown;
   showMenu: (e: boolean) => void;
 };
+
 export type ProjectCardProps = {
   id: number;
   projectName: string;
@@ -66,4 +72,17 @@ export type SkillsProps = {
   id: number;
   skill: string;
   level: number;
+};
+
+export type SocialLinks = {
+  github: string;
+  linkedin: string;
+  twitter: string;
+  email: string;
+};
+
+export type SkillGroup = {
+  category: string;
+  icon: string;
+  skills: string[];
 };

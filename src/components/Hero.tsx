@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Link = ScrollLink as any;
 import { SOCIAL_LINKS, TAGLINE } from "../data/data";
 import { HeroProps } from "../types/types";
 

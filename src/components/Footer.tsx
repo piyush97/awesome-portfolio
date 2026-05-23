@@ -1,5 +1,7 @@
 import React from "react";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Link = ScrollLink as any;
 import { MENU, NAME, SOCIAL_LINKS } from "../data/data";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./SocialIcons";
 

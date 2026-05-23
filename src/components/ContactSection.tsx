@@ -1,6 +1,5 @@
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import React from "react";
 import { CONTACT_TAGLINE, SOCIAL_LINKS } from "../data/data";
 import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from "./SocialIcons";
 
@@ -12,15 +11,6 @@ const LINKS = [
 ];
 
 const ContactSection: React.FC = () => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
   return (
     <section
       id="contact"
@@ -28,13 +18,10 @@ const ContactSection: React.FC = () => {
       aria-labelledby="contact-heading"
     >
       <motion.div
-        ref={ref}
-        animate={controls}
-        initial="hidden"
-        variants={{
-          visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-          hidden: { opacity: 0, y: 30 },
-        }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">
           — Get In Touch

@@ -1,6 +1,8 @@
 import { SwatchIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Link = ScrollLink as any;
 import { useTheme } from "../context/ThemeProvider";
 import { MENU, NAME } from "../data/data";
 import { NavbarProps } from "../types/types";

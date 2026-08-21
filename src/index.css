@@ -1,10 +1,107 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: cupcake, bumblebee;
+}
+@plugin "daisyui/theme" {
+  name: "modern-dark";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+
+  --color-base-100: #0f172a;
+  --color-base-200: #1e293b;
+  --color-base-300: #334155;
+  --color-base-content: #f1f5f9;
+  --color-primary: #6366f1;
+  --color-primary-content: #ffffff;
+  --color-secondary: #8b5cf6;
+  --color-secondary-content: #ffffff;
+  --color-accent: #06b6d4;
+  --color-accent-content: #ffffff;
+  --color-neutral: #334155;
+  --color-neutral-content: #f1f5f9;
+  --color-info: #38bdf8;
+  --color-info-content: #0f172a;
+  --color-success: #34d399;
+  --color-success-content: #0f172a;
+  --color-warning: #fbbf24;
+  --color-warning-content: #0f172a;
+  --color-error: #f87171;
+  --color-error-content: #0f172a;
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+
+  --depth: 1;
+  --noise: 0;
+}
+@plugin "daisyui/theme" {
+  name: "modern-light";
+  default: false;
+  prefersdark: false;
+  color-scheme: light;
+
+  --color-base-100: #ffffff;
+  --color-base-200: #f8fafc;
+  --color-base-300: #f1f5f9;
+  --color-base-content: #0f172a;
+  --color-primary: #6366f1;
+  --color-primary-content: #ffffff;
+  --color-secondary: #8b5cf6;
+  --color-secondary-content: #ffffff;
+  --color-accent: #06b6d4;
+  --color-accent-content: #ffffff;
+  --color-neutral: #e2e8f0;
+  --color-neutral-content: #1e293b;
+  --color-info: #38bdf8;
+  --color-info-content: #0f172a;
+  --color-success: #34d399;
+  --color-success-content: #0f172a;
+  --color-warning: #fbbf24;
+  --color-warning-content: #0f172a;
+  --color-error: #f87171;
+  --color-error-content: #0f172a;
+
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+
+  --depth: 1;
+  --noise: 0;
+}
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --animate-blob: blob 8s ease-in-out infinite;
+  --animate-gradient: gradient 8s ease infinite;
+
+  @keyframes blob {
+    0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    25%      { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
+    50%      { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
+    75%      { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
+  }
+  @keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+  }
+}
 
 @layer base {
   html { scroll-behavior: smooth; }
-  html, body { overflow-x: hidden; font-family: 'Inter', system-ui, sans-serif; }
+  html, body { overflow-x: hidden; font-family: "Inter", system-ui, sans-serif; }
   * { scrollbar-width: thin; scrollbar-color: #6366f1 transparent; }
   *::-webkit-scrollbar { width: 5px; }
   *::-webkit-scrollbar-track { background: transparent; }

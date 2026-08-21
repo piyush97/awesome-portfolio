@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -9,7 +9,7 @@ import { HeroProps } from "../types/types";
 const TECH_STRIP = ["React", "TypeScript", "Node.js", "Python", "Docker", "AWS", "GraphQL"];
 
 const Hero: React.FC<HeroProps> = ({ greetingText, greetingDescription, buttonText }) => {
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -17,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({ greetingText, greetingDescription, buttonTe
     },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };

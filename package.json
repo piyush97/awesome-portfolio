@@ -11,24 +11,24 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "daisyui": "^5.7.22",
-    "framer-motion": "^13.1.1",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
+    "daisyui": "^5.7.36",
+    "framer-motion": "^13.2.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "react-helmet-async": "^3.0.0",
     "react-scroll": "^1.9.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
     "@tailwindcss/typography": "^0.5.20",
-    "@types/node": "^26.4.0",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.5",
+    "@types/node": "^26.5.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@types/react-scroll": "^1.8.10",
     "@vitejs/plugin-react": "^5.2.0",
-    "postcss": "^8.5.26",
+    "postcss": "^8.5.28",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
-    "vite": "^8.2.2"
+    "vite": "^8.3.0"
   }
 }

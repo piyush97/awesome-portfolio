@@ -2,18 +2,15 @@ import React from "react";
 import Heading from "../components/Heading";
 import TimelineCard from "../components/TimelineCard";
 import { EXPERIENCE, SECTIONS } from "../data/data";
-import AnimateVisible from "../utils/AnimateVisible";
 
 const ExperienceContainer: React.FC = () => {
   return (
-    <section className="px-6 py-24 max-w-6xl mx-auto lg:px-16" id="experience">
-      <AnimateVisible>
-        <Heading heading={SECTIONS[1]} />
-      </AnimateVisible>
-      <div className="max-w-2xl">
-        {EXPERIENCE.map(({ id, company, position, description, end, start, logo }, i) => (
-          <AnimateVisible key={id} delay={i * 0.1}>
+    <section className="experience-programme" id="experience">
+      <Heading heading={SECTIONS[1]} />
+      <div className="experience-list">
+        {EXPERIENCE.map(({ id, company, position, description, end, start, logo }) => (
             <TimelineCard
+              key={id}
               styling=""
               num={id}
               id={id}
@@ -24,7 +21,6 @@ const ExperienceContainer: React.FC = () => {
               description={description}
               company={company}
             />
-          </AnimateVisible>
         ))}
       </div>
     </section>

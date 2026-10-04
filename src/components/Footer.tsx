@@ -1,8 +1,5 @@
 import React from "react";
-import { Link as ScrollLink } from "react-scroll";
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const Link = ScrollLink as any;
-import { MENU, NAME, SOCIAL_LINKS } from "../data/data";
+import { MENU, NAME, SOCIAL_LINKS, TEMPLATE_AUTHOR } from "../data/data";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "./SocialIcons";
 
 const Footer: React.FC = () => (
@@ -11,8 +8,8 @@ const Footer: React.FC = () => (
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Brand */}
         <div>
-          <span className="text-2xl font-black text-gradient">{NAME}</span>
-          <p className="text-base-content opacity-40 text-sm mt-1">
+          <span className="text-2xl font-black">{NAME}</span>
+          <p className="text-base-content text-sm mt-1">
             Building the future, one line at a time.
           </p>
         </div>
@@ -22,27 +19,24 @@ const Footer: React.FC = () => (
           <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {MENU.map(({ key, name, route }) => (
               <li key={key}>
-                <Link
-                  to={route}
-                  spy={true}
-                  smooth={true}
-                  duration={400}
-                  className="text-sm text-base-content opacity-50 hover:opacity-100 hover:text-primary cursor-pointer transition-colors"
+                <a
+                  href={`#${route}`}
+                  className="text-sm text-base-content hover:text-primary"
                 >
                   {name}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
         </nav>
 
         {/* Social links */}
-        <div className="flex items-center gap-3" aria-label="Social links">
+        <div className="flex items-center gap-3" role="list" aria-label="Social links">
           <a
             href={SOCIAL_LINKS.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full hover:bg-base-300 text-base-content opacity-50 hover:opacity-100 hover:text-primary transition-all"
+            className="p-2 hover:bg-base-300 text-base-content"
             aria-label="GitHub profile"
             role="listitem"
           >
@@ -52,7 +46,7 @@ const Footer: React.FC = () => (
             href={SOCIAL_LINKS.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full hover:bg-base-300 text-base-content opacity-50 hover:opacity-100 hover:text-primary transition-all"
+            className="p-2 hover:bg-base-300 text-base-content"
             aria-label="LinkedIn profile"
             role="listitem"
           >
@@ -62,7 +56,7 @@ const Footer: React.FC = () => (
             href={SOCIAL_LINKS.twitter}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full hover:bg-base-300 text-base-content opacity-50 hover:opacity-100 hover:text-primary transition-all"
+            className="p-2 hover:bg-base-300 text-base-content"
             aria-label="Twitter profile"
             role="listitem"
           >
@@ -72,15 +66,15 @@ const Footer: React.FC = () => (
       </div>
 
       <div className="mt-8 pt-6 border-t border-base-300 text-center">
-        <p className="text-xs text-base-content opacity-30">
+        <p className="text-sm text-base-content">
           &copy; {new Date().getFullYear()} {NAME}. Designed &amp; developed by{" "}
           <a
-            href="https://piyushmehta.com"
+            href={TEMPLATE_AUTHOR.url}
             className="hover:text-primary transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {NAME}
+            {TEMPLATE_AUTHOR.name}
           </a>
           .
         </p>

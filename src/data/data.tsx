@@ -1,4 +1,5 @@
 import Image from "../assets/social.jpg";
+import PortfolioPreview from "../../demo-hero.png";
 import {
   ImageType,
   MenuProps,
@@ -11,15 +12,20 @@ import {
 
 export const URL = "https://awesome-portfolio.piyushmehta.com";
 export const NAME = "Piyush Mehta";
+export const IS_DEMO = true;
+export const TEMPLATE_AUTHOR = {
+  name: "Piyush Mehta",
+  url: "https://piyushmehta.com",
+};
 
-export const SECTIONS = ["Home", "Experience", "Projects", "Skills"];
-export const HERO_IMAGE = "https://picsum.photos/id/1005/1600/1400";
+export const SECTIONS = ["Home", "Experience", "Projects", "Skills", "Contact"];
 export const CTA_TEXT = "Know More";
 export const MENU: MenuProps[] = [
   { key: 1, route: "home", name: SECTIONS[0] },
   { key: 2, route: "experience", name: SECTIONS[1] },
   { key: 3, route: "projects", name: SECTIONS[2] },
   { key: 4, route: "skills", name: SECTIONS[3] },
+  { key: 5, route: "contact", name: SECTIONS[4] },
 ];
 
 export const GREETING_TEXT = "Available for Work";
@@ -27,6 +33,7 @@ export const GREETING_DESCRIPTION =
   "Busy Developing a side project which will eventually be never done";
 
 export const TAGLINE = "Full Stack Developer crafting exceptional digital experiences";
+export const TECH_STRIP = ["React", "TypeScript", "Node.js", "Python", "Docker", "AWS", "GraphQL"];
 export const ABOUT = "Passionate developer with expertise in building scalable, performant web apps. I turn ideas into reality with clean, efficient code.";
 export const CONTACT_TAGLINE = "Let's build something great together";
 
@@ -60,7 +67,7 @@ export const EXPERIENCE: TimelineProps[] = [
     id: 3,
     company: "Microsoft",
     position: "Software Engineer",
-    logo: "https://www.backbase.com/wp-content/uploads/2020/05/Microsoft-Logo-PNG-Transparent.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
     start: "2015-01-01",
     end: "2016-01-01",
     description: "I worked on the frontend of Microsoft's new search engine.",
@@ -69,7 +76,7 @@ export const EXPERIENCE: TimelineProps[] = [
     id: 4,
     company: "Netflix",
     position: "Software Engineer",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
     start: "2015-01-01",
     end: "2016-01-01",
     description: "I worked on the frontend of Netflix.",
@@ -95,7 +102,7 @@ export const projects: ProjectCardProps[] = [
     projectName: "Awesome Portfolio",
     projectDescription:
       "A portfolio of my work, where all the projects I've made are listed. The website is made using latest technologies",
-    projectImageLogo: `https://picsum.photos/id/1/600/314`,
+    projectImageLogo: PortfolioPreview,
     link: "https://piyushmehta.com",
     buttonText: "View Project",
     tech: ["React", "TailwindCSS", "CSS", "Javascript"],

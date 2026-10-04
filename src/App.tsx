@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Seo from "./components/Seo";
 import HomeContainer from "./containers/HomeContainer";
@@ -11,21 +11,22 @@ function App() {
   const [menuShow, showMenu] = useState(false);
 
   return (
-    <ThemeContext.Provider value={value}>
-      <Seo
-        url={URL}
-        lang="en"
-        metaDescription={GREETING_DESCRIPTION}
-        keywords={KEYWORDS}
-        image={IMAGE}
-        title={NAME}
-        author={NAME}
-        theme={Theme}
-      />
-      <Navbar menuShow={menuShow} showMenu={showMenu} />
+      <ThemeContext.Provider value={value}>
+        <a className="skip-link" href="#portfolio-content">Skip to content</a>
+        <Seo
+          url={URL}
+          lang="en"
+          metaDescription={GREETING_DESCRIPTION}
+          keywords={KEYWORDS}
+          image={IMAGE}
+          title={NAME}
+          author={NAME}
+          theme={Theme}
+        />
+        <Navbar menuShow={menuShow} showMenu={showMenu} />
 
-      <HomeContainer />
-    </ThemeContext.Provider>
+        <HomeContainer />
+      </ThemeContext.Provider>
   );
 }
 

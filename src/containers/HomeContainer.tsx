@@ -9,19 +9,18 @@ import SkillsContainer from "./SkillsContainer";
 
 const HomeContainer: React.FC = () => {
   return (
-    <div className="antialiased bg-base-100 text-base-content">
+    <main className="portfolio-content" id="portfolio-content">
       <Hero
-        image=""
         greetingText={GREETING_TEXT}
         greetingDescription={GREETING_DESCRIPTION}
         buttonText={CTA_TEXT}
       />
-      <ExperienceContainer />
       <ProjectsContainer />
+      <ExperienceContainer />
       <SkillsContainer />
       <ContactSection />
       <Footer />
-    </div>
+    </main>
   );
 };
 

@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import React from "react";
 import { CONTACT_TAGLINE, SOCIAL_LINKS } from "../data/data";
 import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from "./SocialIcons";
@@ -14,37 +13,26 @@ const ContactSection: React.FC = () => {
   return (
     <section
       id="contact"
-      className="px-6 py-24 max-w-6xl mx-auto lg:px-16 text-center"
+      className="contact-programme"
       aria-labelledby="contact-heading"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3">
-          — Get In Touch
-        </p>
+      <div>
         <h2
           id="contact-heading"
-          className="text-4xl lg:text-5xl font-black text-base-content mb-4"
         >
           Let's Connect
         </h2>
-        <div className="mx-auto mb-8 w-16 h-1 bg-gradient-brand rounded-full" aria-hidden="true" />
-        <p className="text-base-content opacity-60 max-w-md mx-auto mb-12 text-lg">
+        <p>
           {CONTACT_TAGLINE}
         </p>
 
-        <div className="flex justify-center gap-4 flex-wrap" role="list">
+        <div className="contact-links" role="list">
           {LINKS.map(({ label, href, icon, external }) => (
             <a
               key={label}
               href={href}
               target={external ? "_blank" : undefined}
               rel={external ? "noopener noreferrer" : undefined}
-              className="flex items-center gap-3 px-6 py-3 rounded-full border border-base-300 hover:border-primary hover:text-primary text-base-content transition-all duration-200 hover:bg-primary hover:bg-opacity-5 font-medium"
               role="listitem"
               aria-label={label}
             >
@@ -53,7 +41,7 @@ const ContactSection: React.FC = () => {
             </a>
           ))}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

@@ -47,14 +47,13 @@ export type HeadingProps = {
 };
 
 export type HeroProps = {
-  image: string;
   greetingText: string;
   greetingDescription: string;
   buttonText: string;
 };
 
 export type NavbarProps = {
-  menuShow: unknown;
+  menuShow: boolean;
   showMenu: (e: boolean) => void;
 };
 

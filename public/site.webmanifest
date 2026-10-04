@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "Awesome Portfolio",
+  "short_name": "Portfolio",
   "icons": [
     {
       "src": "/192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#111111",
-  "background_color": "#111111",
+  "theme_color": "#43104f",
+  "background_color": "#43104f",
   "display": "standalone"
 }

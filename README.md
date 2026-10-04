@@ -18,16 +18,16 @@
 ## Features
 
 - 🎨 Fully customizable theme switching (light & dark)
-- ⚡ Scroll-triggered animations with framer-motion
+- ⚡ Purposeful project switching with reduced-motion support
 - 📱 Responsive, mobile-first layout
 - 🔍 SEO meta tags via react-helmet-async
 - 📝 All content lives in **one file** — edit it and you're done
 
 ## Tech Stack
 
-- **React 18** + **TypeScript 5** via **Vite 5**
-- **Tailwind CSS v3** + **daisyUI v4** — theme switching built in
-- **framer-motion v11** — scroll-triggered animations
+- **React 19** + **TypeScript 7** via **Vite 8**
+- **Tailwind CSS v4** + **daisyUI v5** — CSS-defined themes
+- **Native CSS motion** — one project-change transition with reduced-motion support
 - **react-helmet-async** — SEO meta tags
 
 ## Quickstart
@@ -48,21 +48,29 @@ npm start
 
 # Production build
 npm run build
+
+# Lint
+npm run lint
 ```
 
 ## Customization
 
-All content lives in **`src/data/data.tsx`**. Change:
+Portfolio identity, links, experience, projects, and skills live in **`src/data/data.tsx`**. Change:
 
 | Export | What it controls |
 |---|---|
 | `NAME`, `URL` | Your name and portfolio URL |
-| `TAGLINE`, `ABOUT` | Hero tagline and about text |
-| `GREETING_TEXT` | Hero badge text |
+| `IS_DEMO` | Sample-content labels; turn off after replacing the demo facts |
+| `TAGLINE`, `ABOUT` | Developer introduction |
+| `GREETING_TEXT` | Availability text |
 | `SOCIAL_LINKS` | GitHub, LinkedIn, Twitter, email |
 | `EXPERIENCE` | Timeline cards |
 | `projects` | Project cards |
 | `SKILLS_GROUPED` | Skill badge categories |
+| `TECH_STRIP` | Curated technologies in the introduction |
+| `TEMPLATE_AUTHOR` | Template-author credit and destination |
+
+The employers, projects, and metrics are demo content, not verified claims. Replace them before publishing your own portfolio. Template-level icons and manifest metadata live in `public/`; React owns the page title and SEO metadata.
 
 ## Deploy
 

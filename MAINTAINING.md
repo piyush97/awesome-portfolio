@@ -7,25 +7,26 @@ This guide covers the day-to-day maintenance of the [awesome-portfolio](https://
 | Concern | Tool | Notes |
 |---|---|---|
 | Package manager | **Yarn (classic v1)** | `yarn.lock` is the canonical lockfile. Yarn is pinned to v1 semantics — run `yarn set version classic` if Yarn Berry prompts are seen. |
-| Runtime | **Node.js 20 LTS** | CI pins `actions/setup-node@v4` with `node-version: 20` and `cache: yarn`. |
-| Framework | Vite 5 + React 18 + TypeScript 5 | Build is `tsc && vite build`; output goes to `build/`. |
-| Styling | Tailwind CSS v3 + daisyUI v4 | Theme switching in `tailwind.config.js`. |
+| Runtime | **Node.js 24 LTS** | CI uses `actions/setup-node@v7` with `node-version: 24` and `cache: yarn`. |
+| Framework | Vite 8 + React 19 + TypeScript 7 | Build is `tsc && vite build`; output goes to `build/`. |
+| Styling | Tailwind CSS v4 + daisyUI v5 | Theme palettes and plugins live in `src/index.css`. |
+| Lint | Oxlint | `yarn lint` checks `src/`; warnings fail the check. |
 
 ## CI
 
 `.github/workflows/ci.yml` runs on every push to `main` and on every pull request:
 
-1. `actions/checkout@v4`
-2. `actions/setup-node@v4` (Node 20, yarn cache)
+1. `actions/checkout@v7`
+2. `actions/setup-node@v7` (Node 24, yarn cache)
 3. `yarn install --frozen-lockfile`
-4. `yarn build` (`tsc && vite build`)
-
-**Note on `yarn lint`:** `package.json` currently ships a `lint` script (`eslint src --ext ts,tsx --report-unused-disable-directives`) but **eslint is not declared in `devDependencies`** and no ESLint config exists in the repo, so `yarn lint` fails with `eslint: command not found`. CI intentionally runs **build only**. To restore linting, add ESLint as a dev dependency and commit an ESLint config (flat or legacy) — then add a `yarn lint` step to `ci.yml`.
+4. `yarn lint`
+5. `yarn build` (`tsc && vite build`)
 
 Local CI equivalent:
 
 ```bash
 yarn install --frozen-lockfile
+yarn lint
 yarn build
 ```
 
@@ -69,7 +70,7 @@ gh api repos/piyush97/awesome-portfolio/commits/main --jq .sha          # == mer
 gh run list -R piyush97/awesome-portfolio --branch main --limit 3      # CI conclusion == success
 
 # Local sanity check
-yarn install --frozen-lockfile && yarn build
+yarn install --frozen-lockfile && yarn lint && yarn build
 ```
 
 ## Contact

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-04T04:54:36.190Z",
+  "title": "Design System: Awesome Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "theatre-gold": { "role": "primary", "displayName": "Theatre Gold", "canonical": "#ffd45c" },
+      "plum-primary": { "role": "primary", "displayName": "Plum Primary", "canonical": "#572460" },
+      "apricot": { "role": "secondary", "displayName": "Apricot", "canonical": "#ffb57c" },
+      "lilac": { "role": "secondary", "displayName": "Lilac", "canonical": "#dba8f1" },
+      "mulberry-900": { "role": "neutral", "displayName": "Stage Mulberry", "canonical": "#43104f" },
+      "paper-lavender": { "role": "neutral", "displayName": "Paper Lavender", "canonical": "#f6eeff" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Featured project and section headlines." },
+      "body": { "displayName": "Body", "purpose": "Portfolio copy and controls." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "project-switch", "value": "420ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Top-down reveal when the featured project changes; removed under reduced motion." },
+      { "name": "reduced-motion", "value": "animation: none; transition: none; scroll-behavior: auto", "purpose": "Global prefers-reduced-motion override." }
+    ],
+    "breakpoints": [
+      { "name": "rail-to-header", "value": "1099px" },
+      { "name": "mobile-layout", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Featured project selector",
+      "kind": "button",
+      "refersTo": "project-selector",
+      "description": "A native pressed button selects the project shown on the stage.",
+      "html": "<button class=\"project-selector\" type=\"button\" aria-pressed=\"true\">Awesome Portfolio</button>",
+      "css": ".project-selector { font: 400 16px Gabarito, sans-serif; min-height: 44px; padding: 10px 14px; border: 1px solid transparent; border-radius: 4px; background: #ffd45c; color: #34103d; cursor: pointer; } .project-selector:hover { border-color: currentColor; } .project-selector:focus-visible { outline: 2px solid #43104f; outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Demo Theatre",
+    "overview": "A work-first interface stages software demonstrations as the main event. A mulberry programme rail frames the large projection; vivid caption floors and pale-lavender pauses create a flat, graphic theatre rather than a generic portfolio grid. The system is a reusable template: project and biography content remains editable sample material.",
+    "keyCharacteristics": [
+      "Featured project owns the first view; supporting story follows.",
+      "Full mulberry, lavender, gold, lilac, and apricot palette; dark and light themes.",
+      "Flat projection/programme language with restrained 4px controls."
+    ],
+    "rules": [],
+    "dos": [
+      "Do lead with the selected project and keep the programme rail at 236px on wide screens.",
+      "Do preserve native button, select, and anchor interactions with visible keyboard focus.",
+      "Do keep the stage flat and apply the reduced-motion override."
+    ],
+    "donts": [
+      "Don't promote demo employers, projects, metrics, or links as verified personal claims.",
+      "Don't replace the projection-led opening with a name-first gradient hero or interchangeable card grid.",
+      "Don't add shadows as a default depth treatment."
+    ]
+  }
+}
